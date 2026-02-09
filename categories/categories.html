@@ -1,0 +1,919 @@
+<!-- ===============================
+FILE: categories.html -> CATEGORIES PAGE
+Project: GEFELL MMC Website
+
+Notes:
+- Shared styles: /styles-home.css
+- Page styles: /categories/categories.css
+- Shared JS: /script.js
+- Page JS: /categories/categories.js
+
+Header + Contact Dock + Footer:
+- You will copy/paste from your other pages.
+================================= -->
+
+<head>
+  <!-- ============ Basics ============ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kateqoriyalar | GEFELL MMC</title>
+
+  <meta name="description"
+    content="Pəncərə və qapı sistemləri üçün aksesuarlar və profillər. Premium brendlər üzrə məhsul kateqoriyaları." />
+
+  <!-- ============ Fonts (Performance) ============ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- ============ Icons ============ -->
+  <link rel="icon" type="image/png" href="/assets/favicon.png" />
+  <!-- If you use Font Awesome icons on this page -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+
+  <!-- ============ Canonical ============ -->
+  <link rel="canonical" href="https://gefell.az/categories/categories.html" />
+
+
+  <!-- ============ Social Share (OG) ============ -->
+  <meta property="og:title" content="Kateqoriyalar | GEFELL MMC" />
+  <meta property="og:description"
+    content="Pəncərə və qapı sistemləri üçün aksesuarlar və profillər. Premium brendlər üzrə məhsul kateqoriyaları." />
+
+  <meta property="og:image" content="https://gefell.az/assets/og-cover.jpg" />
+  <meta property="og:url" content="https://gefell.az/categories/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="GEFELL" />
+  <meta property="og:locale" content="az_AZ" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Mobile theme color -->
+  <meta name="theme-color" content="#0d213f" />
+
+  <!-- ============ Shared CSS ============ -->
+  <link rel="stylesheet" href="/styles-home.css" />
+
+  <!-- ============ Page CSS ============ -->
+  <link rel="stylesheet" href="/categories/categories.css" />
+</head>
+
+
+<body>
+  <!-- ===============================
+     Header (same for all pages, but with active page indication in nav)
+     =============================== -->
+  <header class="header">
+    <div class="container header__row">
+      <!-- LEFT: BRAND LOGO-->
+      <a class="brand" href="/" aria-label="GEFELL Ana Səhifə">
+        <img src="/assets/logo_name.PNG" alt="GEFELL Logo" class="brand__logo brand__logo--word" />
+      </a>
+
+      <!-- RIGHT: NAVIGATION -->
+      <nav id="site-nav" class="nav" aria-label="Əsas naviqasiya">
+        <a href="/">Ana Səhifə</a>
+
+
+        <!-- ============ HAQQIMIZDA ============ -->
+        <div class="nav-dd nav-dd--split" id="aboutWrap">
+          <a class="nav-dd__link" href="/about/about.html">Haqqımızda</a>
+
+          <button class="nav-dd__toggle" id="aboutBtn" type="button" aria-haspopup="menu" aria-expanded="false"
+            aria-label="Haqqımızda alt menyu">
+            <svg class="nav-dd__arrow" viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+
+          <ul class="nav-dd__menu" id="aboutMenu" role="menu" hidden>
+            <li role="none"><a role="menuitem" href="/about/about.html#intro">Şirkət Təqdimatı</a></li>
+            <li role="none"><a role="menuitem" href="/about/about.html#projects">Layihələr</a></li>
+            <li role="none"><a role="menuitem" href="/about/about.html#faq">FAQ</a></li>
+            <li role="none"><a role="menuitem" href="/news/news.html">Xəbərlər</a></li>
+          </ul>
+        </div>
+
+        <!-- ============ KATEQORİYALAR ============ -->
+        <div class="nav-dd nav-dd--split" id="catWrap">
+          <a class="nav-dd__link" href="/categories/categories.html" aria-current="page">Kateqoriyalar</a>
+
+          <button class="nav-dd__toggle" id="catBtn" type="button" aria-haspopup="menu" aria-expanded="false"
+            aria-label="Kateqoriyalar alt menyu">
+            <svg class="nav-dd__arrow" viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+
+          <ul class="nav-dd__menu" id="catMenu" role="menu" hidden>
+            <li role="none"><a role="menuitem" href="/categories/categories.html#accessories">Aksesuarlar</a></li>
+            <li role="none"><a role="menuitem" href="/categories/categories.html#profiles">Profillər</a></li>
+          </ul>
+        </div>
+
+
+        <!-- ============ YÜKLƏMƏLƏR ============ -->
+        <div class="nav-dd nav-dd--split" id="dlWrap">
+          <a class="nav-dd__link" href="/downloads/downloads.html">Yükləmələr</a>
+
+          <button class="nav-dd__toggle" id="dlBtn" type="button" aria-haspopup="menu" aria-expanded="false"
+            aria-label="Yükləmələr alt menyu">
+            <svg class="nav-dd__arrow" viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- ============ ELAQE ============ -->
+        <a href="/contact/contact.html" aria-label="Əlaqə">
+          <span>Əlaqə</span>
+        </a>
+
+        <!-- START: LANGUAGE MENU  -->
+
+        <!-- button with popup mennu -->
+        <div class="lang-wrap">
+          <button class="lang" id="langBtn" aria-haspopup="menu" aria-expanded="false">
+            <img class="lang__flag" src="/assets/flags/az.svg" alt="" />
+            <span class="lang__code">AZ</span>
+            <svg class="lang__arrow" viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+
+          <!-- aria-current -> current lang; data-lang for js -->
+          <ul class="lang__menu" id="langMenu" role="menu" hidden>
+            <li role="menuitem" data-lang="az" aria-current="true">
+              <span class="lang__row">
+                <img class="lang__flag" src="/assets/flags/az.svg" alt="" />
+                <span>AZ</span>
+              </span>
+            </li>
+
+            <!-- These languages are under construction :) -->
+
+            <!-- <li role="menuitem" data-lang="en">
+              <span class="lang__row">
+                <img class="lang__flag" src="/assets/flags/en.svg" alt="" />
+                <span>EN</span>
+              </span>
+            </li>
+            <li role="menuitem" data-lang="ru">
+              <span class="lang__row">
+                <img class="lang__flag" src="/assets/flags/ru.svg" alt="" />
+                <span>RU</span>
+              </span>
+            </li> -->
+          </ul>
+        </div>
+
+        <!-- END: LANGUAGE MENU -->
+
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===============================
+     FLOATING CONTACT DOCK (Font Awesome used for icons)
+     =============================== -->
+  <nav class="contact-dock" aria-label="Sürətli əlaqə">
+
+    <!-- PHONE -->
+    <!-- aria-hidden hides the icons from screen readers since it is nonsense for them to hear icons -->
+    <a class="contact-item phone" href="tel:+994502266683" aria-label="Bizə zəng et: +994 50 226 66 83"
+      title="Zəng: +994 50 226 66 83">
+      <i class="fa-solid fa-phone icon" aria-hidden="true"></i>
+      <span class="label">Zəng et</span>
+    </a>
+
+    <!-- WHATSAPP -->
+    <!-- target = _blank opens new tab and noopener noreferrer hides user data in newly opened tab-->
+    <a class="contact-item whatsapp" href="https://wa.me/994502266683" target="_blank"
+      rel="noopener noreferrer nofollow" aria-label="WhatsApp ilə yaz" title="WhatsApp ilə yaz">
+      <i class="fa-brands fa-whatsapp icon" aria-hidden="true"></i>
+      <span class="label">WhatsApp</span>
+    </a>
+
+    <!-- EMAIL -->
+    <a class="contact-item email" href="mailto:info@gefell.az" aria-label="E-poçt yaz" title="E-poçt: info@gefell.az">
+      <i class="fa-solid fa-envelope icon" aria-hidden="true"></i>
+      <span class="label">E-poçt</span>
+    </a>
+  </nav>
+
+
+  <!-- ===============================
+     Product List & their descriptions
+     =============================== -->
+  <main>
+    <section class="cat-hero" id="top">
+      <div class="cat-container">
+        <div class="cat-hero__content">
+          <h1 class="cat-hero__title">Məhsul Kataloqu</h1>
+          <p class="cat-hero__desc">
+          <p class="cat-hero__desc">
+            Biz dünya səviyyəli brendlərin pəncərə və qapı sistemləri üçün
+            yüksək keyfiyyətli profil və aksesuar həllərinin rəsmi təchizatçısıyıq.
+            Təqdim olunan bütün məhsullar müasir memarlıq tələblərinə,
+            uzunömürlülük standartlarına və yüksək izolyasiya göstəricilərinə
+            uyğun şəkildə seçilmişdir.
+          </p>
+
+          </p>
+
+          <!-- Buttons on top -->
+          <nav class="cat-hero__chips" aria-label="Səhifədaxili keçidlər">
+            <a class="cat-chip" href="#accessories">Aksesuarlar</a>
+            <a class="cat-chip" href="#profiles">Profillər</a>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <!-- Accessories -->
+    <section class="cat-section" id="accessories">
+      <div class="cat-container">
+        <header class="cat-section__head">
+          <h2 class="cat-section__title">Aksesuarlar</h2>
+          </br>
+        </header>
+
+        <!-- KNG -->
+        <section class="brand-block" id="kng">
+          <div class="brand-block__head">
+            <h3 class="brand-block__title">KNG</h3>
+            <p>
+              1996-cı ildən etibarən pəncərə və qapı furnitura sistemləri sahəsində
+              fəaliyyət göstərən KNG, bu gün qlobal miqyasda tanınan istehsalçılardan biridir.
+              Şirkət SGS (ISO 9001:2000) sertifikatlı müasir istehsalat bazasına malikdir.
+            </p>
+
+            <p>
+              KNG-nin 700 m² sahəyə malik xüsusi sınaq laboratoriyasında bütün məhsullar
+              100 000-dən çox açılıb-bağlanma dövrü və
+              1000 saatlıq duz spreyi sınağından keçirilərək
+              beynəlxalq keyfiyyət standartlarına uyğunluğu təmin edilir.
+            </p>
+
+          </div>
+
+          <!-- KNG #1 -->
+          <div class="item-list">
+            <article class="item-row" data-item>
+              <div class="item-row__media">
+                <div class="item-mediaScroller" data-scroller>
+                  <img src="/categories/assets/HBSB.png" alt="KNG HBSB Sistemi 1">
+                </div>
+                <!-- <button class="nav-btn prev" aria-label="Əvvəlki şəkil">❮</button>
+                <button class="nav-btn next" aria-label="Növbəti şəkil">❯</button> -->
+
+              </div>
+
+              <div class="item-row__content">
+                <h4 class="item-row__title">Qaldır-sür (HBSB) sistemi</h4>
+
+                <br />
+                <ul class="item-row__bullets">
+                  <li>400 kq-a qədər yükdaşıma qabiliyyəti</li>
+                  <li>Səssiz və rəvan sürüşmə mexanizmi</li>
+                  <li>Kvadrat şaftlı premium tutacaq dizaynı</li>
+                </ul>
+
+                <br />
+                <button class="item-row__toggle" type="button" data-toggle="details" aria-expanded="false"
+                  aria-controls="acc-kng-details">
+                  Ətraflı bax
+                </button>
+
+                <div class="item-row__details" id="acc-kng-details" hidden>
+                  <p>
+                    KNG HBSB sistemləri ağır və geniş şüşə qanadların (3.3 metr hündürlüyədək) rahat hərəkəti
+                    üçün nəzərdə tutulub.
+                    Xüsusi təkər qrupları və korroziyaya davamlı ötürücü qutular sayəsində sistem hətta
+                    maksimum yük altında belə
+                    səssiz və rəvan işləyir. Yüksək hermetiklik təmin edərək səs və istilik izolyasiyasını qoruyur.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+
+            <!-- KNG #2 -->
+
+
+            <article class="item-row" data-item>
+              <div class="item-row__media">
+                <div class="item-mediaScroller" data-scroller>
+                  <img src="/categories/assets/TT1.png" alt="KNG Aksesuar Sistemi 1">
+                </div>
+                <!--                 
+                <button class="nav-btn prev" aria-label="Əvvəlki şəkil">❮</button>
+                <button class="nav-btn next" aria-label="Növbəti şəkil">❯</button> -->
+
+              </div>
+
+              <div class="item-row__content">
+                <h4 class="item-row__title">Tək açılım pəncərə sistemi</h4>
+                <br />
+                <ul class="item-row__bullets">
+                  <li>Avropa standartlı C-kanal uyğunluğu</li>
+                  <li>Çoxnöqtəli kilidləmə</li>
+                  <li>Erqonomik tutacaq dizaynı</li>
+                </ul>
+                <br />
+                <button class="item-row__toggle" type="button" data-toggle="details" aria-expanded="false"
+                  aria-controls="acc-kng-details1">
+                  Ətraflı bax
+                </button>
+
+                <div class="item-row__details" id="acc-kng-details1" hidden>
+                  <p>KNG-nin yalnız içəriyə açılan sistemləri yüksək statik möhkəmliyi və sadəliyi ilə fərqlənir.
+                    Master və Master Pro seriyalı tutacaqlarla təchiz olunan bu sistem, 1000 saatlıq duz spreyi
+                    sınağından keçmiş xüsusi korroziyaya
+                    davamlı örtüklə (Oxidation treatment) təmin edilir. İctimai binalar və ofislər üçün uzunmüddətli və
+                    etibarlı həlldir.</p>
+                </div>
+              </div>
+            </article>
+
+
+            <!-- KNG #3 -->
+
+
+            <article class="item-row" data-item>
+              <div class="item-row__media">
+                <div class="item-mediaScroller" data-scroller>
+                  <img src="/categories/assets/TT31.png" alt="KNG Aksesuar Sistemi 1">
+                  <img src="/categories/assets/TT32.png" alt="KNG Aksesuar Sistemi 2">
+                  <img src="/categories/assets/TT33.png" alt="KNG Aksesuar Sistemi 3">
+                </div>
+                <!-- <button class="nav-btn prev" aria-label="Əvvəlki şəkil">❮</button>
+                <button class="nav-btn next" aria-label="Növbəti şəkil">❯</button> -->
+              </div>
+
+              <div class="item-row__content">
+                <h4 class="item-row__title">Cüt açılım pəncərə sistemi</h4>
+                <br />
+                <ul class="item-row__bullets">
+                  <li>RC2 təhlükəsizlik səviyyəsi</li>
+                  <li>130 kq-dək qanad çəkisi</li>
+                  <li>Gizli və ya görünən mentəşə seçimi</li>
+                </ul>
+                <br />
+                <button class="item-row__toggle" type="button" data-toggle="details" aria-expanded="false"
+                  aria-controls="acc-kng-details2">
+                  Ətraflı bax
+                </button>
+
+                <div class="item-row__details" id="acc-kng-details2" hidden>
+                  <p>Bu sistem pəncərənin həm tam açılmasını (180°), həm də üst hissədən təhlükəsiz havalandırma
+                    rejimini təmin edir.
+                    KNG-nin xüsusi "Anti-lift" və "Anti-pry" kilidləmə elementləri kənar müdaxilələrə qarşı yüksək
+                    müqavimət göstərir.
+                    Sistem 100,000 dövriyyəli açılıb-bağlanma testindən keçmişdir və ən sərt iqlim şəraitində
+                    hermetikliyi tam saxlayır.</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- KNG #4 -->
+
+
+            <article class="item-row" data-item>
+              <div class="item-row__media">
+                <div class="item-mediaScroller" data-scroller>
+                  <img src="/categories/assets/door_kng.png" alt="KNG Aksesuar Sistemi 1">
+
+
+                </div>
+                <!-- <button class="nav-btn prev" aria-label="Əvvəlki şəkil">❮</button>
+                <button class="nav-btn next" aria-label="Növbəti şəkil">❯</button> -->
+              </div>
+
+              <div class="item-row__content">
+                <h4 class="item-row__title">KNG Standart Seriyası</h4>
+
+                <br />
+                <ul class="item-row__bullets">
+                  <li>Çoxnöqtəli kilid gövdəsi</li>
+                  <li>160 kq-dək qapı mentəşə yükü</li>
+                  <li>Tənzimlənən qarşı tərəf lövhələri</li>
+                </ul>
+                <br />
+                <button class="item-row__toggle" type="button" data-toggle="details" aria-expanded="false"
+                  aria-controls="acc-kng-details3">
+                  Ətraflı bax
+                </button>
+
+                <div class="item-row__details" id="acc-kng-details3" hidden>
+                  <p>KNG qapı sistemləri həm tək, həm də cüt qanadlı konstruksiyalar üçün nəzərdə tutulub.
+                    Tənzimlənən qapı mentəşələri qapının zamanla sallanmasının qarşısını alır. Çoxnöqtəli kilidləmə
+                    mexanizmi
+                    qapının çərçivəyə hər bir nöqtədən tam sıxılmasını təmin edərək maksimal külək və səs izolyasiyası
+                    yaradır.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- SIEGENIA -->
+        <section class="brand-block" id="siegenia">
+          <div class="brand-block__head">
+            <h3 class="brand-block__title">SIEGENIA</h3>
+            <p>
+              Alman mühəndisliyi ilə tanınan SIEGENIA, pəncərə və qapı sistemləri üçün
+              yüksək təhlükəsizlik, uzunömürlülük və mexaniki stabilik təqdim edən
+              <strong>TITAN</strong> furnitura platforması ilə dünya üzrə lider brendlərdən biridir.
+            </p>
+          </div>
+
+
+          <!-- SIEGENIA #1-->
+          <article class="item-row" data-item>
+            <div class="item-row__media">
+              <div class="item-mediaScroller" data-scroller>
+                <img src="/categories/assets/Siegenia_Titan.jpg" alt="SIEGENIA TITAN AF – PVC kanal">
+              </div>
+            </div>
+
+            <div class="item-row__content">
+              <h4 class="item-row__title">
+                TITAN — PVC profil (PVC kanal)
+              </h4>
+              <br />
+
+              <ul class="item-row__bullets">
+                <li>RC2 səviyyəsinə qədər oğurluğa qarşı qoruma</li>
+                <li>Göbələkvari kilidləmə sancaqları ilə tam perimetr sıxılma</li>
+                <li>Qanadın 3 ölçüdə mikro tənzimlənməsi (şaquli, üfüqi, sıxılma)</li>
+              </ul>
+              <br />
+              <button class="item-row__toggle" type="button" data-toggle="details" aria-expanded="false"
+                aria-controls="acc-siegenia-titan-pvc">
+                Ətraflı bax
+              </button>
+
+              <div class="item-row__details" id="acc-siegenia-titan-pvc" hidden>
+                <p>
+                  TITAN AF PVC kanal sistemi PVC profillər üçün xüsusi olaraq
+                  optimallaşdırılmışdır. Sistem bütün perimetr üzrə
+                  bərabər sıxılma yaradaraq hava, su və səs izolyasiyasını maksimum
+                  səviyyədə saxlayır.
+                </p>
+
+                <p>
+                  Yüksək keyfiyyətli polad komponentlər və SIEGENIA-nın xüsusi səth
+                  emalı texnologiyası sayəsində sistem uzun illər stabil işləyir və
+                  intensiv istifadə üçün uyğundur.
+                </p>
+              </div>
+            </div>
+          </article>
+
+
+
+          <!-- SIEGENIA #2-->
+          <article class="item-row" data-item>
+            <div class="item-row__media">
+              <div class="item-mediaScroller" data-scroller>
+                <img src="/categories/assets/TT_AF.jpg" alt="SIEGENIA TITAN AF – Alüminium kanal">
+              </div>
+            </div>
+
+            <div class="item-row__content">
+              <h4 class="item-row__title">
+                TITAN AF — PVC profil (Alüminium kanal)
+              </h4>
+              <br />
+
+              <ul class="item-row__bullets">
+                <li>Alüminium C-kanal üzərində yüksək mexaniki dayanıqlıq</li>
+                <li>Böyük və ağır qanadlar üçün stabil yük paylanması</li>
+                <li>Uzunömürlü və deformasiyaya davamlı konstruksiya</li>
+              </ul>
+              <br />
+              <button class="item-row__toggle" type="button" data-toggle="details" aria-expanded="false"
+                aria-controls="acc-siegenia-titan-alu">
+                Ətraflı bax
+              </button>
+
+              <div class="item-row__details" id="acc-siegenia-titan-alu" hidden>
+                <p>
+                  Alüminium kanal üzərində qurulan TITAN AF sistemi,
+                  yüksək möhkəmlik tələb olunan PVC konstruksiyalar üçün idealdır.
+                  Kanalın metal strukturu yükü daha bərabər paylayaraq
+                  sistemin uzunmüddətli stabil işləməsini təmin edir.
+                </p>
+
+                <p>
+                  Bu həll xüsusilə geniş açılışlar, yüksək qanad çəkiləri və
+                  intensiv istifadə olunan obyektlər üçün tövsiyə olunur.
+                </p>
+              </div>
+            </div>
+          </article>
+        </section>
+
+
+        <!-- AXOR -->
+        <section class="brand-block" id="axor">
+          <div class="brand-block__head">
+            <h3 class="brand-block__title">AXOR</h3>
+            <p>
+              <strong>AXOR</strong> — Ukraynada istehsal olunan, Avropa standartlarına uyğun
+              pəncərə və qapı furnituraları üzrə ixtisaslaşmış beynəlxalq brenddir.
+              Şirkət tam avtomatlaşdırılmış istehsalat xətti, dəqiq mexaniki emal
+              və uzunömürlü sistem yanaşması ilə tanınır.
+              AXOR məhsulları Avropa normativlərinə uyğun testlərdən keçirilmiş və
+              <strong>10 il rəsmi zəmanət</strong> ilə təqdim olunur.
+            </p>
+          </div>
+
+
+          <!-- AXOR #1-->
+          <div class="item-list">
+            <article class="item-row" data-item>
+              <div class="item-row__media">
+                <div class="item-mediaScroller" data-scroller>
+                  <img src="/categories/assets/KL 3.png" alt="AXOR Komfort Line K3 PVC kanal">
+                </div>
+              </div>
+
+              <div class="item-row__content">
+                <h4 class="item-row__title">
+                  Komfort Line K3 — PVC kanal (PVC profillər üçün)
+                </h4>
+                <br />
+                <ul class="item-row__bullets">
+                  <li>PVC kanallı profillər üçün optimallaşdırılmış mexanika</li>
+                  <li>Çoxnöqtəli kilidləmə ilə stabil sıxılma</li>
+                  <li>Yüksək dövriyyəyə davamlı polad elementlər</li>
+                </ul>
+                <br />
+                <button class="item-row__toggle" type="button" data-toggle="details" aria-expanded="false"
+                  aria-controls="acc-axor-pvc">
+                  Ətraflı bax
+                </button>
+
+                <div class="item-row__details" id="acc-axor-pvc" hidden>
+                  <p>
+                    AXOR Komfort Line K3 (PVC kanal) sistemi PVC profillər üçün nəzərdə tutulmuşdur
+                    və profil kanalına birbaşa uyğun gələn konstruksiyaya malikdir.
+                    Sistem qanadın çərçivəyə bərabər sıxılmasını təmin edərək
+                    hava və səs izolyasiyasını stabilləşdirir.
+                  </p>
+
+                  <p>
+                    Mexanizmlər yüksək möhkəmlikli poladdan hazırlanır və
+                    <strong>uzunmüddətli istismar zamanı boşalma riskini minimuma endirir</strong>.
+                    Məhsul <strong>10 il zəmanət</strong> ilə təqdim olunur.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+
+
+
+            <!-- AXOR #2-->
+
+            <article class="item-row" data-item>
+              <div class="item-row__media">
+                <div class="item-mediaScroller" data-scroller>
+                  <img src="/categories/assets/KL_31.jpg" alt="AXOR Komfort Line K3 Alüminium kanal">
+                </div>
+              </div>
+
+              <div class="item-row__content">
+                <h4 class="item-row__title">
+                  Komfort Line K3 — Alüminium kanal (Alüminium profillər üçün)
+                </h4>
+                <br />
+
+                <ul class="item-row__bullets">
+                  <li>Alüminium kanallar üçün xüsusi montaj geometrisi</li>
+                  <li>Yüksək yükdaşıma və sabitlik</li>
+                  <li>İntensiv istifadəyə uyğun kilidləmə mexanizmi</li>
+                </ul>
+                <br />
+                <button class="item-row__toggle" type="button" data-toggle="details" aria-expanded="false"
+                  aria-controls="acc-axor-alu">
+                  Ətraflı bax
+                </button>
+
+                <div class="item-row__details" id="acc-axor-alu" hidden>
+                  <p>
+                    AXOR Komfort Line K3 (Alüminium kanal) sistemi alüminium profillərin
+                    yüksək sərtliyini və çəkisini nəzərə alaraq hazırlanmışdır.
+                    Kilidləmə elementləri yükü bərabər paylayaraq
+                    qanadın deformasiyasının qarşısını alır.
+                  </p>
+
+                  <p>
+                    Sistem xüsusilə tez-tez açılıb-bağlanan ofis və ictimai binalar üçün
+                    nəzərdə tutulmuşdur və <strong>uzunmüddətli mexaniki sabitlik</strong>
+                    təmin edir. Məhsul <strong>10 il rəsmi zəmanət</strong> ilə təqdim olunur.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+
+
+        <!-- Profiles -->
+        <section class="cat-section" id="profiles">
+          <div class="cat-container">
+            <header class="cat-section__head">
+              <h2 class="cat-section__title">Profillər</h2>
+              </br>
+            </header>
+
+            <!-- GEALAN -->
+            <section class="brand-block" id="gealan">
+              <div class="brand-block__head">
+                <h3 class="brand-block__title">GEALAN</h3>
+                <p>
+                  <strong>GEALAN</strong> — Almaniyada istehsal olunan, PVC profil sistemləri üzrə
+                  Avropanın aparıcı brendlərindən biridir.
+                  Şirkət innovativ texnologiyaları, yüksək enerji səmərəliliyi və
+                  uzunömürlü sistem həlləri ilə tanınır.
+                  GEALAN profil sistemləri Avropa normativlərinə uyğun istehsal olunur
+                  və <strong>10 il rəsmi zəmanət</strong> ilə təqdim edilir.
+                </p>
+              </div>
+
+
+              <!-- GEALAN #1-->
+              <div class="item-list">
+                <article class="item-row" data-item>
+                  <div class="item-row__media">
+                    <div class="item-mediaScroller" data-scroller>
+                      <img src="/categories/assets/s8000.jpg" alt="GEALAN S8000 profil sistemi">
+                    </div>
+                  </div>
+
+                  <div class="item-row__content">
+                    <h4 class="item-row__title">GEALAN S8000</h4>
+                    <p class="item-row__meta">
+                      PVC Profil • 74 mm • 6 kameralı sistem
+                    </p>
+                    <br />
+                    <ul class="item-row__bullets">
+                      <li>74 mm montaj dərinliyi – stabil konstruksiya</li>
+                      <li>6 kameralı quruluş – yaxşı istilik izolyasiyası</li>
+                      <li>A sinfi divar qalınlığı</li>
+                    </ul>
+                    <br />
+                    <button class="item-row__toggle" type="button" data-toggle="details" aria-expanded="false"
+                      aria-controls="gealan-s8000">
+                      Ətraflı bax
+                    </button>
+
+                    <div class="item-row__details" id="gealan-s8000" hidden>
+                      <p>
+                        GEALAN S8000 sistemi yaşayış və kommersiya layihələri üçün
+                        <strong>universal baza profil</strong> hesab olunur.
+                        Yüksək statik göstəriciləri sayəsində iri ölçülü qanadlarda belə
+                        stabil nəticə verir və müxtəlif furnitura sistemləri ilə uyğundur.
+                      </p>
+                    </div>
+                  </div>
+                </article>
+
+
+                <!-- GEALAN #2 -->
+
+                <article class="item-row" data-item>
+                  <div class="item-row__media">
+                    <div class="item-mediaScroller" data-scroller>
+                      <img src="/categories/assets/s9000.jpg" alt="GEALAN S9000 profil sistemi">
+                    </div>
+                  </div>
+
+                  <div class="item-row__content">
+                    <h4 class="item-row__title">GEALAN S9000</h4>
+                    <p class="item-row__meta">
+                      PVC Profil • 82.5 mm • Enerji səmərəli sistem
+                    </p>
+                    <br />
+                    <ul class="item-row__bullets">
+                      <li>82.5 mm montaj dərinliyi</li>
+                      <li>3 sızdırmazlıq konturu (orta conta daxil)</li>
+                      <li>Yüksək istilik və səs izolyasiyası</li>
+                    </ul>
+                    <br />
+                    <button class="item-row__toggle" type="button" data-toggle="details" aria-expanded="false"
+                      aria-controls="gealan-s9000">
+                      Ətraflı bax
+                    </button>
+
+                    <div class="item-row__details" id="gealan-s9000" hidden>
+                      <p>
+                        GEALAN S9000 sistemi <strong>aşağı enerji sərfiyyatlı və passiv ev layihələri</strong>
+                        üçün nəzərdə tutulmuşdur.
+                        Orta contalı konstruksiya hava sızmasını minimuma endirir və
+                        yüksək komfort səviyyəsi yaradır.
+                      </p>
+                    </div>
+                  </div>
+                </article>
+
+
+                <!-- GEALAN #3 -->
+
+                <article class="item-row" data-item>
+                  <div class="item-row__media">
+                    <div class="item-mediaScroller" data-scroller>
+                      <img src="/categories/assets/linear.webp" alt="GEALAN LINEAR profil sistemi">
+                    </div>
+                  </div>
+
+                  <div class="item-row__content">
+                    <h4 class="item-row__title">GEALAN LINEAR</h4>
+                    <p class="item-row__meta">
+                      PVC Profil • Dizayn yönümlü sistem
+                    </p>
+                    <br />
+                    <ul class="item-row__bullets">
+                      <li>Düz xətlər və minimalist görünüş</li>
+                      <li>İri şüşə sahələri üçün uyğun konstruksiya</li>
+                      <li>Müasir memarlıq layihələri üçün ideal</li>
+                    </ul>
+                    <br />
+                    <button class="item-row__toggle" type="button" data-toggle="details" aria-expanded="false"
+                      aria-controls="gealan-linear">
+                      Ətraflı bax
+                    </button>
+
+                    <div class="item-row__details" id="gealan-linear" hidden>
+                      <p>
+                        GEALAN LINEAR sistemi müasir memarlıq trendlərinə uyğun olaraq
+                        <strong>maksimal şüşə sahəsi və minimal profil görünüşü</strong>
+                        təqdim edir. Dizayn və performans balansını qoruyur.
+                      </p>
+                    </div>
+                  </div>
+                </article>
+
+
+
+                <!-- GEALAN #4 -->
+
+                <article class="item-row" data-item>
+                  <div class="item-row__media">
+                    <div class="item-mediaScroller" data-scroller>
+                      <img src="/categories/assets/smoovio.webp" alt="GEALAN SMOOVIO sürüşmə sistemi">
+                    </div>
+                  </div>
+
+                  <div class="item-row__content">
+                    <h4 class="item-row__title">GEALAN SMOOVIO</h4>
+                    <p class="item-row__meta">
+                      PVC Sürüşmə Sistemi • Paralel sürüşmə
+                    </p>
+                    <br />
+                    <ul class="item-row__bullets">
+                      <li>Yüksək hermetiklik ilə sürüşmə mexanizmi</li>
+                      <li>Geniş açılışlı panoramik həll</li>
+                      <li>Rahat və səssiz istifadə</li>
+                    </ul>
+                    <br />
+                    <button class="item-row__toggle" type="button" data-toggle="details" aria-expanded="false"
+                      aria-controls="gealan-smoovio">
+                      Ətraflı bax
+                    </button>
+
+                    <div class="item-row__details" id="gealan-smoovio" hidden>
+                      <p>
+                        GEALAN SMOOVIO sistemi sürüşmə qapılarda
+                        <strong>klassik sürüşmə ilə tilt mexanizminin üstünlüklərini</strong>
+                        birləşdirir. Yüksək sıxılma xətti sayəsində istilik və səs izolyasiyası
+                        qorunur.
+                      </p>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </section>
+
+  </main>
+
+
+  <!-- ================= 
+    Footer 
+   ================= -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+
+      <!-- Brand -->
+      <div class="site-footer__brand">
+        <a href="/">
+          <img src="/assets/logo_name.PNG" alt="GEFELL MMC — pəncərə və qapı aksesuarları" />
+        </a>
+        <p class="site-footer__desc">
+          GEFELL MMC — pəncərə və qapı sistemləri üçün yüksək keyfiyyətli aksesuar və profillərin təchizatı üzrə
+          ixtisaslaşmış şirkətdir. Sertifikatlı, Avropa standartlarına uyğun həllər təqdim edirik.
+
+        </p>
+      </div>
+
+      <!-- Haqqımızda -->
+      <div>
+        <h4 class="site-footer__title">Haqqımızda</h4>
+        <ul class="site-footer__links">
+          <li><a href="/about/about.html#intro">Şirkət Təqdimatı</a></li>
+          <li><a href="/about/about.html#projects">Layihələr</a></li>
+          <li><a href="/about/about.html#faq">FAQ</a></li>
+          <li><a href="/news/news.html">Xəbərlər</a></li>
+        </ul>
+      </div>
+
+      <!-- Kateqoriyalar -->
+      <div>
+        <h4 class="site-footer__title">Kateqoriyalar</h4>
+        <ul class="site-footer__links">
+          <li><a href="/categories/categories.html#profiles">Profillər</a></li>
+          <li><a href="/categories/categories.html#accessories">Aksesuarlar</a></li>
+        </ul>
+      </div>
+
+
+      <!-- Yükləmələr -->
+      <div>
+        <h4 class="site-footer__title">Yükləmələr</h4>
+        <ul class="site-footer__links">
+          <li><a href="/downloads/downloads.html">Yükləmələr</a></li>
+        </ul>
+      </div>
+
+      <!-- Əlaqə -->
+      <div>
+        <h4 class="site-footer__title">Əlaqə</h4>
+
+        <ul class="site-footer__links">
+          <li><a href="/contact/contact.html">Əlaqə</a></li>
+        </ul>
+      </div>
+
+      <!-- Əlaqə vasitələri -->
+      <div class="site-footer__contact-col">
+        <h4 class="site-footer__title">Bizimlə əlaqə</h4>
+
+        <ul class="site-footer__contact">
+          <li>
+            <a href="tel:+994502266683" aria-label="Bizə zəng et: +994 50 226 66 83">
+              <i class="fa-solid fa-phone" aria-hidden="true"></i>
+              <span>+994 50 226 66 83</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://wa.me/994502266683" target="_blank" rel="noopener noreferrer nofollow"
+              aria-label="Bizə WhatsAppdan yaz: +994 50 226 66 83">
+              <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+              <span>WhatsApp</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="mailto:info@gefell.az" aria-label="Bizə mail at: info@gefell.az">
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+              <span>info@gefell.az</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+
+    </div>
+
+    <!-- Bottom bar: auto year with JS -->
+    <div class="site-footer__bottom">
+      &copy;<span id="currentYear"></span> GEFELL MMC. Bütün hüquqlar qorunur.
+    </div>
+  </footer>
+
+  <!-- ===============================
+      FOOTER
+      (PASTE your footer here from other pages)
+    ================================ -->
+  <!-- PASTE FOOTER HERE -->
+
+  <!-- Shared JS (keeps same functions as other pages) -->
+  <script src="/script.js"></script>
+
+  <!-- Page JS -->
+  <script src="/categories/categories.js"></script>
+</body>
+
+</html>

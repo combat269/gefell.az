@@ -1,0 +1,294 @@
+/* ===============================
+   DOWNLOADS PAGE — BASE
+   =============================== */
+
+/* ===============================
+   CENTER HERO TITLE & DESCRIPTION
+   =============================== */
+
+.downloads-hero .section-head {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.downloads-hero .section__title {
+  text-align: center;
+}
+
+.downloads-hero .section__desc {
+  text-align: center;
+}
+
+/* ===============================
+   BRAND BLOCK
+   =============================== */
+
+.brand-block {
+  padding: 64px 0;
+  border-top: 1px solid #e9edf2;
+}
+
+.brand-block:first-of-type {
+  border-top: none;
+}
+
+.brand-head {
+  max-width: 720px;
+  margin-bottom: 36px;
+}
+
+.brand-head h2 {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+  color: #0d213f;
+}
+
+.brand-head p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #5f6b7a;
+}
+
+/* ===============================
+   BRAND CONTENT GRID
+   =============================== */
+
+.brand-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+/* ===============================
+   DOWNLOAD GROUP
+   =============================== */
+
+.download-group {
+  background: #f9fafc;
+  border: 1px solid #e6ebf1;
+  border-radius: 10px;
+  padding: 22px 22px 20px;
+}
+
+.download-group h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: #0d213f;
+}
+
+/* ===============================
+   DOWNLOAD LIST
+   =============================== */
+
+.download-group ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.download-group li + li {
+  margin-top: 10px;
+}
+
+.download-group a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  font-size: 14px;
+  font-weight: 500;
+  color: #1f4fd8;
+  text-decoration: none;
+  transition:
+    color 0.2s ease,
+    transform 0.15s ease;
+}
+
+.download-group a::before {
+  content: "\f019"; /* Font Awesome download icon */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 13px;
+  color: #1f4fd8;
+}
+
+.download-group a:hover {
+  color: #163aa8;
+  transform: translateX(2px);
+}
+
+/* ===============================
+   RESPONSIVE — TABLET
+   =============================== */
+
+@media (max-width: 1024px) {
+  .brand-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .brand-head h2 {
+    font-size: 26px;
+  }
+}
+
+/* ===============================
+   PDF EMBEDS (KNG)
+   =============================== */
+
+.pdf-item {
+  margin-bottom: 24px;
+}
+
+.pdf-item p {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #0d213f;
+}
+
+.pdf-item embed {
+  border: 1px solid #e6ebf1;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.pdf-download {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #1f4fd8;
+  text-decoration: none;
+}
+
+.pdf-download:hover {
+  text-decoration: underline;
+}
+
+/* ===============================
+   RESPONSIVE — MOBILE
+   =============================== */
+
+@media (max-width: 640px) {
+  .downloads-hero {
+    padding: 56px 0 40px;
+  }
+
+  .brand-block {
+    padding: 48px 0;
+  }
+
+  .brand-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .brand-head h2 {
+    font-size: 24px;
+  }
+
+  .download-group {
+    padding: 18px;
+  }
+}
+
+/* ===============================
+   FULL WIDTH GROUP
+   =============================== */
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+/* ===============================
+   VIDEO SECTION
+   =============================== */
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.video-box {
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.video-box iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+}
+
+.video-box p {
+  padding: 10px 14px;
+  background: #ffffff;
+  font-size: 14px;
+  color: #0d213f;
+}
+
+/* ===============================
+   DOCUMENT CARDS
+   =============================== */
+
+.doc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.doc-card {
+  border: 1px solid #e6ebf1;
+  border-radius: 12px;
+  padding: 20px;
+  background: #ffffff;
+}
+
+.doc-card h4 {
+  font-size: 16px;
+  margin-bottom: 6px;
+  color: #0d213f;
+}
+
+.doc-card p {
+  font-size: 14px;
+  color: #5f6b7a;
+  margin-bottom: 14px;
+}
+
+.doc-action {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f4fd8;
+  text-decoration: none;
+}
+
+.doc-action:hover {
+  text-decoration: underline;
+}
+
+/* ===============================
+   RESPONSIVE
+   =============================== */
+
+@media (max-width: 1024px) {
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .doc-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .doc-grid {
+    grid-template-columns: 1fr;
+  }
+}

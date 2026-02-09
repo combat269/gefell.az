@@ -1,0 +1,302 @@
+/* ==========================================================================
+   1. GLOBAL VARIABLES & RESET
+   ========================================================================== */
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --dark: #0f172a;
+  --text-main: #334155;
+  --text-muted: #64748b;
+  --bg-light: #f8fafc;
+  --border: #e2e8f0;
+  --radius: 16px;
+  --transition: 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--text-main);
+  background-color: #fff;
+  line-height: 1.6;
+}
+
+.cat-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ==========================================================================
+   2. HERO SECTION
+   ========================================================================== */
+.cat-hero {
+  padding: 80px 0;
+  background: transparent;
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+}
+
+.cat-hero__content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.cat-hero__title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 1.5rem;
+}
+
+.cat-hero__desc {
+  font-size: 1.15rem;
+  color: var(--text-main);
+  margin-bottom: 2rem;
+}
+
+.cat-hero__chips {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.cat-chip {
+  padding: 10px 28px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.cat-chip:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* ==========================================================================
+   3. SECTION SEPARATION
+   ========================================================================== */
+.cat-section {
+  padding: 60px 0;
+}
+
+#profiles {
+  background-color: rgba(0, 0, 0, 0.02);
+  border-top: 1px solid var(--border);
+}
+
+.cat-section__title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 40px;
+}
+
+/* ==========================================================================
+   4. BRAND BLOCK (VERTICAL LINE)
+   ========================================================================== */
+.brand-block {
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 80px;
+}
+
+.brand-block::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  bottom: 0;
+  width: 3px;
+  background: var(--primary);
+}
+
+.brand-block::after {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 0;
+  width: 17px;
+  height: 17px;
+  background: var(--primary);
+  border: 4px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px var(--primary);
+}
+
+.brand-block__title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--dark);
+}
+
+.brand-block__head p {
+  color: var(--text-muted);
+  margin-bottom: 25px;
+}
+
+/* ==========================================================================
+   5. PRODUCT CARDS & IMAGE FIX (UPDATED FOR SMOOTHNESS)
+   ========================================================================== */
+.item-row {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 24px;
+  overflow: hidden;
+  /* Smooth shadow transition for the whole card */
+  transition: box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.item-row:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.item-row__media {
+  position: relative;
+  width: 350px;
+  height: 100%;
+  min-height: 300px;
+  background: #f1f5f9;
+  overflow: hidden;
+}
+
+.item-mediaScroller {
+  display: flex;
+  height: 100%;
+  /* SMOOTHNESS: Added glide transition for changing images */
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.item-mediaScroller img {
+  width: 350px;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  flex-shrink: 0;
+}
+
+/* Slayder Buttons (UPDATED WITH EFFECTS) */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.95);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 5;
+  opacity: 0;
+  /* Smooth fade and transform */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  color: var(--dark);
+  font-weight: bold;
+}
+
+.item-row__media:hover .nav-btn {
+  opacity: 1;
+}
+
+/* Hover Effect on Buttons */
+.nav-btn:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-50%) scale(1.1); /* Slight grow effect */
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+/* Active/Click Effect on Buttons */
+.nav-btn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.nav-btn.prev {
+  left: 12px;
+}
+.nav-btn.next {
+  right: 12px;
+}
+
+/* ==========================================================================
+   6. CONTENT & TOGGLE AREA (UPDATED FOR SMOOTHNESS)
+   ========================================================================== */
+.item-row__content {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.item-row__toggle {
+  align-self: flex-start;
+  padding: 12px 28px;
+  background: var(--dark);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  /* Added smoother transition */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.item-row__toggle:hover {
+  background: var(--primary);
+  transform: translateY(-2px); /* Subtle lift */
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.item-row__toggle:active {
+  transform: translateY(0);
+}
+
+.item-row__details {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px dashed var(--border);
+  /* Gentle fade-in for the text details */
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ==========================================================================
+   7. RESPONSIVE
+   ========================================================================== */
+@media (max-width: 850px) {
+  .item-row {
+    grid-template-columns: 1fr;
+  }
+  .item-row__media {
+    width: 100%;
+    height: 250px; /* Fixed height on mobile so it doesn't stay long */
+  }
+  .item-mediaScroller img {
+    width: 100vw;
+  }
+}

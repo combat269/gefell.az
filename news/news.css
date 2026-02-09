@@ -1,0 +1,211 @@
+/* ===============================
+FILE: news.css
+Purpose: News page-specific styles
+Depends on: /styles-home.css
+=============================== */
+
+/* ------------------------------------------------
+   Sticky footer (safe)
+-------------------------------------------------- */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* ------------------------------------------------
+   News Hero (no background, text emphasis only)
+-------------------------------------------------- */
+.news-hero {
+  padding: 36px 0 26px;
+}
+
+.news-hero__inner {
+  display: grid;
+  gap: 8px;
+}
+
+.news-hero__title {
+  margin: 0;
+  font-size: clamp(26px, 4vw, 36px);
+  color: var(--brand);
+  letter-spacing: -0.2px;
+}
+
+.news-hero__desc {
+  margin: 0;
+  max-width: 880px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+/* ------------------------------------------------
+   News section (premium horizontal inset)
+-------------------------------------------------- */
+.section.news {
+  padding: 28px 0 44px;
+}
+
+/* This creates left/right breathing space */
+.section.news .container {
+  padding-left: clamp(16px, 4vw, 48px);
+  padding-right: clamp(16px, 4vw, 48px);
+}
+
+/* ------------------------------------------------
+   News List
+-------------------------------------------------- */
+.news-list {
+  display: grid;
+  gap: 22px;
+
+}
+
+/* ------------------------------------------------
+   News Card (premium, not centered)
+-------------------------------------------------- */
+.news-card {
+  display: grid;
+  grid-template-columns: minmax(260px, 340px) 1fr;
+  gap: 16px;
+
+  border: 1px solid rgba(13, 33, 63, 0.12);
+  border-radius: var(--radius);
+  background: #fff;
+  overflow: hidden;
+
+  box-shadow:
+    0 4px 12px rgba(13, 33, 63, 0.06),
+    0 1px 2px rgba(13, 33, 63, 0.04);
+
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+
+  margin-inline: clamp(16px, 4vw, 48px);
+
+}
+
+.news-card:hover {
+  box-shadow:
+    0 8px 22px rgba(13, 33, 63, 0.1),
+    0 2px 6px rgba(13, 33, 63, 0.06);
+  transform: translateY(-1px);
+}
+
+/* Media */
+.news-card__media img {
+  width: 100%;
+  height: 100%;
+  min-height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Content */
+.news-card__body {
+  padding: 16px 16px 18px;
+  display: grid;
+  gap: 10px;
+}
+
+.news-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Tags */
+.news-tag {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(13, 33, 63, 0.08);
+  color: var(--brand);
+  border: 1px solid rgba(13, 33, 63, 0.12);
+}
+
+.news-date {
+  font-size: 13px;
+  color: rgba(13, 33, 63, 0.6);
+  font-weight: 600;
+}
+
+/* Text */
+.news-card__title {
+  margin: 0;
+  font-size: 18px;
+  color: var(--brand);
+  line-height: 1.25;
+}
+
+.news-card__text {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+/* Links */
+.news-link {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Details */
+.news-card__details {
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+}
+
+.news-card__details summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--brand);
+  list-style: none;
+}
+
+.news-card__details summary::-webkit-details-marker {
+  display: none;
+}
+
+.news-card__details-inner {
+  margin-top: 8px;
+  color: rgba(13, 33, 63, 0.78);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+/* Empty state */
+.news-empty {
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+  background: #fff;
+}
+
+/* ------------------------------------------------
+   Responsive
+-------------------------------------------------- */
+@media (max-width: 900px) {
+  .news-card {
+    grid-template-columns: 1fr;
+  }
+
+  .news-card__media img {
+    min-height: 190px;
+  }
+
+  .section.news {
+    padding: 22px 0 38px;
+  }
+}

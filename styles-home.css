@@ -1,0 +1,1511 @@
+/* =========================================================
+   HOMEPAGE-ONLY CSS 
+   ========================================================= */
+
+/* ===============================
+   THEME TOKENS (Design variables) - START
+   =============================== */
+:root {
+  /* Primary brand color (dark blue). Used for text/accents */
+  --brand: #0d213f;
+  /* Pure white */
+  --white: #ffffff;
+
+  /* -------- Derived colors -------- */
+  /*Page background*/
+  --bg: var(--white);
+  /*Default text color*/
+  --text: var(--brand);
+  /*for secondary text*/
+  --muted: rgba(13, 33, 63, 0.7);
+  /* Subtle hairline borders */
+  --border: rgba(13, 33, 63, 0.12);
+  /* Very light tinted background */
+  --light: rgba(13, 33, 63, 0.04);
+
+  --radius: 12px;
+  /*soft card shadow*/
+  --shadow: 0 6px 18px rgba(13, 33, 63, 0.1);
+
+  /* -------- Header sizing / nav tokens -------- */
+  --header-h: 72px;
+  --menu-gap: 28px;
+  --menu-font: 14px;
+
+  /* -------- Wordmark image heights -------- */
+  /* header logo height */
+  --wordmark-h: 72px;
+  /* footer logo height*/
+  --wordmark-h-footer: 72px;
+}
+
+/* ===============================
+   BASE - START
+   =============================== */
+
+* {
+  /*padding and border are included in the element’s total size*/
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Arial,
+    sans-serif;
+  color: var(--text);
+  line-height: 1.6;
+  padding-top: var(--header-h);
+  min-height: 100vh;
+
+  background-color: #ffffff;
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(13, 33, 63, 0.02) 0 1px,
+    transparent 1px 14px
+  );
+}
+
+/* Responsive images */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Default link style */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Layout container */
+.container {
+  width: min(1500px, 92%);
+  margin-inline: auto;
+}
+
+/*Secondary text */
+.muted {
+  color: var(--muted);
+}
+
+/* ======= Sections ======= */
+.section {
+  padding: 56px 0;
+}
+
+.section__title {
+  margin: 0 0 18px;
+  font-size: clamp(22px, 3.8vw, 28px);
+  text-align: center;
+}
+
+/* ---- Grids ---- */
+.grid {
+  display: grid;
+  gap: 18px;
+}
+
+.grid--6 {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 1024px) {
+  .grid--6 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid--3 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid--6 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ---- Category cards ---- */
+.cat-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #fff;
+  transition: transform 0.12s ease;
+}
+
+.cat-card:hover {
+  transform: translateY(-2px);
+}
+
+.cat-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+
+.cat-card__body {
+  padding: 12px;
+}
+
+.cat-card h3 {
+  margin: 0 0 6px;
+  font-size: 16px;
+}
+
+.cat-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* ---- Product cards ---- */
+.card {
+  border: 1px solid var(--border);
+  background: #fff;
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card__media {
+  height: 180px;
+  background: linear-gradient(
+    135deg,
+    rgba(13, 33, 63, 0.06),
+    rgba(13, 33, 63, 0.12)
+  );
+}
+
+.card__body {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card__meta {
+  font-size: 13px;
+  color: var(--brand);
+}
+
+/* ---- Brands row ---- */
+.brands {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+  align-items: center;
+  justify-items: center;
+}
+
+.brands img,
+.brands span {
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.9;
+  filter: grayscale(0.2);
+}
+
+/* ===============================
+   HEADER (fixed, transparent → solid on scroll)
+   =============================== */
+
+/* Main header wrapper (fixed at top) */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  /* Default state: transparent over hero */
+  background: transparent;
+  border-bottom: 1px solid transparent;
+
+  /* Smooth transitions between states */
+  transition:
+    background-color 0.35s ease,
+    border-color 0.22s ease,
+    backdrop-filter 0.22s ease,
+    color 0.22s ease;
+
+  z-index: 50;
+}
+
+/* Header content row: logo + nav */
+.header__row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+
+  min-height: var(--header-h);
+
+  /* Responsive horizontal padding */
+  padding-inline: clamp(8px, 1.5vw, 14px);
+}
+
+/* Transparent mode (top of page) */
+.header--transparent {
+  color: #fff;
+
+  /* Helps readability over images */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+/* Desktop hover “glass” effect (mostly desktop-only) */
+.header--transparent:hover {
+  background: rgba(15, 23, 42, 0.85);
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+
+  /* Glass effect */
+  backdrop-filter: saturate(1.2) blur(10px);
+
+  /* No need for text-shadow once bg exists */
+  text-shadow: none;
+}
+
+/* When user scrolls (JS adds .header--solid) */
+.header--solid {
+  background: rgba(15, 23, 42, 0.85);
+  color: #fff;
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+  backdrop-filter: saturate(1.2) blur(10px);
+}
+
+/* Brand wrapper (logo) */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+
+  /* Keep it above nav if needed, but not extreme */
+  z-index: 1;
+}
+
+/* Wordmark sizing inside header */
+.brand__logo--word {
+  max-height: calc(var(--header-h) - 18px);
+  height: auto;
+  width: auto;
+  display: block;
+}
+
+/* ===== Mobile improvement: make header solid for readability ===== */
+@media (max-width: 768px) {
+  .header--transparent {
+    background: rgba(15, 23, 42, 0.85);
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+    text-shadow: none;
+  }
+}
+
+/* ===============================
+   NAVIGATION of the header
+   =============================== */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--menu-gap);
+  /* Push nav to the right in the grid */
+  justify-self: end;
+}
+
+/* Top-level nav links */
+.nav a {
+  font-size: var(--menu-font);
+  font-weight: 600;
+  line-height: 1;
+  /* Room for custom underline */
+  padding-bottom: 12px;
+}
+
+/* Underline animation for simple links (exclude the CTA) */
+/* Create a pseudo-element under each non-CTA link that we animate in/out */
+.nav > a:not(.nav-cta) {
+  position: relative;
+}
+
+/* Pseudo-element = the underline bar (exists always; scaled to zero until hover/active) */
+.nav > a:not(.nav-cta)::after {
+  content: "";
+  position: absolute;
+  /* Full width underline, sits 4px above bottom */
+  left: 0;
+  right: 0;
+  bottom: 4px;
+  height: 2px;
+  /*matches the current color*/
+  background: currentColor;
+  /* Hidden by scaling to 0 on X axis */
+  transform: scaleX(0);
+  /* Grows from center */
+  transform-origin: center;
+  transition: transform 0.28s ease;
+  opacity: 0.95;
+}
+
+/* Show underline on hover and when this is the current page link */
+.nav > a:hover::after,
+.nav > a[aria-current="page"]::after {
+  /*Underline on current page */
+  transform: scaleX(1);
+}
+
+/* Underline when dropdown parent is the current page */
+.nav .nav-dd__link[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+/* ===============================
+   LANGUAGE SELECTOR (button + menu)
+   =============================== */
+.lang-wrap {
+  /* Anchor for absolutely positioned dropdown */
+  position: relative;
+  margin-left: 18px;
+}
+
+/* Language pill: fixed layout to prevent header shift */
+.lang {
+  /* align in a consistent row */
+  display: inline-grid;
+  /* children go left to right */
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  align-items: center;
+  column-gap: 8px;
+
+  padding: 8px 12px;
+  border-radius: 999px;
+
+  background: rgba(13, 33, 63, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  line-height: 1;
+
+  backdrop-filter: saturate(1.2) blur(4px);
+
+  width: 92px;
+  box-sizing: border-box;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background-color 0.18s ease;
+}
+
+/* Flag always same box */
+.lang__flag {
+  width: 20px;
+  height: 14px;
+  display: block;
+  object-fit: cover;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Code always same width too */
+.lang__code {
+  display: inline-block;
+  width: 24px; /* enough for "AZ", "EN", "RU" */
+  text-align: left;
+}
+
+.lang__arrow {
+  width: 12px;
+  height: 12px;
+  transition:
+    transform 0.18s ease,
+    opacity 0.18s ease;
+  /*it is the transparency level of an element*/
+  opacity: 0.9;
+}
+
+/* Hover OR open state */
+.lang:hover,
+.lang.is-open {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+  background: rgba(15, 23, 42, 1);
+}
+
+/* When the menu is open (JS toggles .is-open), rotate the arrow */
+.lang.is-open .lang__arrow {
+  transform: rotate(180deg) translateY(1px);
+}
+
+/* The dropdown menu */
+.lang__menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  /*left right distance from the above main language displayer*/
+  left: 0;
+  right: 0;
+  /*Padding from the outer box from the language list*/
+  padding: 3px;
+  list-style: none;
+  margin: 0;
+  background: rgba(13, 33, 63, 0.94);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  /* Above header contents */
+  z-index: 200;
+}
+
+/*The three list elements: the flags*/
+.lang__menu li {
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/*language rows one by one*/
+.lang__menu .lang__row {
+  display: grid;
+  grid-template-columns: 20px auto;
+  /* Flag + code */
+  align-items: center;
+  column-gap: 8px;
+}
+
+/* State: the current language row */
+.lang__menu li[aria-current="true"] {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Hovered language highlighted */
+.lang__menu li:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+/* =========================================
+   NAV DROPDOWN of the header
+   ========================================= */
+
+/* Wrapper */
+.nav-dd {
+  position: relative; /* anchor for absolute menu */
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Dropdown menu */
+.nav-dd__menu {
+  position: absolute;
+  top: 100%; /* directly under button */
+  left: 0; /* align to text start */
+  min-width: 260px;
+
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+
+  background: rgba(13, 33, 63, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28);
+
+  z-index: 300;
+}
+
+/* Hide via [hidden] attribute in JS */
+.nav-dd__menu[hidden] {
+  display: none;
+}
+
+/* Menu items */
+.nav-dd__menu a {
+  display: block;
+  padding: 10px 14px;
+  border-radius: 10px;
+
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.92);
+
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nav-dd__menu a:hover,
+.nav-dd__menu a:focus-visible {
+  background: rgba(255, 255, 255, 0.14);
+  outline: none;
+}
+
+/* Hover bridge — prevents accidental close */
+@media (min-width: 901px) {
+  .nav-dd::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    height: 14px; /* safe hover zone */
+  }
+
+  /* Show menu on hover */
+  .nav-dd:hover .nav-dd__menu {
+    display: block;
+  }
+}
+
+/* =============================================
+   Featured slider: several Advertisement slides
+   ============================================= */
+.featured {
+  padding: 0;
+  /* Pull section up so header overlays it */
+  margin-top: calc(var(--header-h) * -1);
+}
+
+/* Slider viewport; we removed frame (border/radius/shadow) for full-bleed look */
+.featured__wrap {
+  position: relative;
+  /*if the slide content overflows, then it clips it & hides*/
+  /* Hide overflow during horizontal slide transitions */
+  overflow: hidden;
+  /* Removing the wrapper frame (white square around the featured slide) */
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Horizontal track: each slide is 100% width; grid makes a horizontal strip */
+.featured__track {
+  display: grid;
+  /* New items laid out horizontally */
+  grid-auto-flow: column;
+  /* Each slide takes full viewport width of wrap */
+  grid-auto-columns: 100%;
+}
+
+/* Each slide is a <figure>; reset UA default margins; allow positioned caption */
+.featured__slide {
+  position: relative;
+  height: auto;
+  /* UA default is margin: 1em 40px; removing avoids white “frame” */
+  margin: 0;
+}
+
+/* Images are wide panoramic banners; cover ensures full fill without distortion */
+.featured__slide img {
+  width: 100%;
+  /* Adjust if you want taller (e.g., 16/9) */
+  aspect-ratio: 16/10;
+  /* Crop to fill the frame */
+  /* object-fit: cover; */
+  display: block;
+  /* Slight pop */
+  filter: saturate(1.02);
+}
+
+/* Caption pill in bottom-left */
+.featured__caption {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  margin: 0;
+  font-weight: 700;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(6px) saturate(1.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  padding: 6px 10px;
+}
+
+/* Prev/Next arrow buttons (overlayed) */
+.featured__ctrl {
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+  /* Modern shorthand: transform translateY(-50%) */
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(15, 23, 42, 0.55);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.featured__ctrl:hover {
+  transform: translateY(-2px);
+  background: rgba(15, 23, 42, 0.85);
+}
+
+.featured__ctrl.prev {
+  left: 10px;
+}
+
+.featured__ctrl.next {
+  right: 10px;
+}
+
+/* dots */
+.featured__dots {
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  translate: -50% 0;
+  display: inline-flex;
+  gap: 6px;
+}
+
+/* --- Featured slider dots: dark blue theme --- */
+.featured__dots button {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid rgba(13, 33, 63, 0.35);
+  /* subtle ring */
+  background: rgba(13, 33, 63, 0.45);
+  /* dim brand */
+  padding: 0;
+  cursor: pointer;
+  box-shadow: 0 0 0 0 rgba(13, 33, 63, 0);
+  /* for focus ring anim */
+  transition:
+    background-color 0.15s ease,
+    box-shadow 0.15s ease,
+    transform 0.1s ease;
+}
+
+/* active (current) dot = solid brand */
+.featured__dots button[aria-current="true"] {
+  background: var(--brand);
+  border-color: rgba(13, 33, 63, 0.8);
+}
+
+/* hover pop */
+.featured__dots button:hover {
+  transform: translateY(-1px);
+  background: rgba(13, 33, 63, 0.65);
+}
+
+/* keyboard focus */
+.featured__dots button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(13, 33, 63, 0.25);
+}
+
+/* ===== Static brand logo strip ===== */
+.brand-strip {
+  background: var(--light);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 22px 0;
+}
+
+.brand-strip__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(24px, 4vw, 60px);
+}
+
+/* Logo images */
+.brand-strip__list img {
+  height: 88px;
+  width: auto;
+  display: block;
+  filter: brightness(0.9);
+  opacity: 0.85;
+  transition:
+    transform 0.25s ease,
+    filter 0.25s ease,
+    opacity 0.25s ease;
+}
+
+/* Hover animation */
+.brand-strip__list img:hover {
+  transform: translateY(-4px) scale(1.05);
+  filter: none;
+  opacity: 1;
+}
+
+/* Responsive spacing */
+@media (max-width: 600px) {
+  .brand-strip__list {
+    gap: 24px;
+  }
+}
+
+/* =====================================
+   About Section - Right Visual Container
+   ===================================== */
+
+.about-home__visual {
+  width: 100%;
+  height: clamp(240px, 35vw, 400px);
+  /* you can adjust depending on desired size */
+  border-radius: 18px;
+  overflow: hidden;
+
+  background: #e9ecef;
+  /* background color for the container */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  /* shadow for depth */
+  position: relative;
+}
+
+.about-home__visual img {
+  width: 100%;
+  height: 100%;
+  /* force image to fill full container */
+  object-fit: cover;
+  /* crop sides to fill area */
+  display: block;
+}
+
+/* ===============================
+   Daha Ətraflı CTA button
+   =============================== */
+
+.about-home__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  padding: 9px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--brand);
+  color: var(--brand);
+  font-weight: 600;
+  font-size: 14px;
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+  cursor: pointer;
+  /* smooth hover */
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.15s ease;
+}
+
+/* OVerlay animation */
+.about-home__cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(13, 33, 63, 0.05),
+    rgba(255, 255, 255, 0.1)
+  );
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+}
+
+/* Hover effect */
+.about-home__cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+  border-color: rgba(13, 33, 63, 0.85);
+}
+
+.about-home__cta:hover::before {
+  transform: translateX(0);
+}
+
+/* Arrow movement */
+.about-home__cta-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.about-home__cta:hover .about-home__cta-icon {
+  transform: translateX(3px);
+}
+
+/* ============= Contact dock container, fixed to right ============*/
+/* ---- Fixed Dock on the right ---- */
+.contact-dock {
+  position: fixed;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-end;
+  /* keep all bubbles hugging right edge */
+  z-index: 2000;
+}
+
+/* ---- Each bubble ---- */
+.contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* icons centered when collapsed */
+  text-align: center;
+  gap: 0;
+  /* prevents hidden label from pushing icon */
+  width: auto;
+  max-width: 52px;
+  /* collapsed (icon only) */
+  overflow: hidden;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+  color: #0d213f;
+  transition:
+    max-width 0.55s ease-in-out,
+    box-shadow 0.55s ease-in-out,
+    transform 0.1s ease;
+  /* expands to the LEFT */
+  transform-origin: right center;
+}
+
+/* ---- Icon ---- */
+.contact-item .icon {
+  width: 22px;
+  height: 18px;
+  flex: 0 0 22px;
+  /* fixes shrinking */
+  min-width: 22px;
+  /* ensures icon always visible */
+  fill: currentColor;
+}
+
+/* ---- Label ---- */
+.contact-item .label {
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(8px);
+  overflow: hidden;
+  max-width: 0;
+  /* collapsed (hidden) */
+  margin-left: 0;
+  /* no gap when hidden */
+  transition:
+    max-width 0.33s ease-in-out,
+    margin-left 0.33s ease-in-out,
+    opacity 0.1s ease-in-out,
+    transform 0.1s ease-in-out;
+}
+
+/* ---- Hover or Focus expands LEFT ---- */
+
+/* Hover -> state after the mouse is on the icons(s) */
+/* 
+  :focus-visible = show styles only for keyboard users (Tab focus).
+  Unlike :focus, it does NOT activate on mouse clicks, 
+  so bubbles don't stay expanded after clicking them.
+*/
+.contact-item:hover,
+.contact-item:focus-visible {
+  max-width: 220px;
+  /* expands leftward */
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.15);
+  justify-content: flex-end;
+  /* moves icon to right when expanded */
+}
+
+.contact-item:hover .label,
+.contact-item:focus-visible .label {
+  max-width: 180px;
+  /* reveals label */
+  margin-left: 10px;
+  /* space between icon and text */
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ---- Colors ---- */
+.contact-item.phone {
+  color: #0d213f;
+}
+
+.contact-item.whatsapp {
+  color: #25d366;
+}
+
+.contact-item.email {
+  color: #0a66c2;
+}
+
+.contact-item:active {
+  transform: scale(0.98);
+}
+
+/* ===============================
+   Homepage About Section
+   =============================== */
+
+.about-home__grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .about-home__grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+}
+.about-home__text h2 {
+  margin: 0 0 12px;
+  font-size: clamp(24px, 4vw, 32px);
+}
+
+.about-home__text p {
+  margin-bottom: 14px;
+  font-size: 15px;
+  color: var(--muted);
+}
+/* About split dropdown: link + arrow */
+.nav-dd--split {
+  gap: 6px;
+}
+
+/* Make link look EXACTLY like normal nav links */
+.nav-dd__link {
+  font-size: var(--menu-font);
+  font-weight: 600;
+  line-height: 1;
+  padding-bottom: 12px;
+  color: inherit;
+  text-decoration: none;
+  position: relative;
+}
+
+/* Underline animation like other links */
+.nav-dd__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 4px;
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.28s ease;
+  opacity: 0.95;
+}
+
+.nav-dd--split:hover .nav-dd__link::after {
+  transform: scaleX(1);
+}
+
+/* Small arrow button */
+.nav-dd__toggle {
+  all: unset;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  padding-bottom: 12px; /* align baseline with text */
+}
+
+/* rotate arrow when open */
+.nav-dd.is-open .nav-dd__arrow {
+  transform: rotate(180deg);
+}
+
+/* ===============================
+   Strengths Cards
+   =============================== */
+.strengths__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  justify-content: center;
+
+  gap: 22px;
+}
+
+.strength-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+  text-align: center;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.strength-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+
+.strength-card h3 {
+  margin: 12px 0 6px;
+  font-size: 16px;
+}
+
+.strength-card p {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* Icon styling */
+.strength-icon {
+  font-size: 32px;
+  color: var(--brand);
+  opacity: 0.9;
+}
+
+/* Mobile responsive */
+@media (max-width: 900px) {
+  .strengths__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .strengths__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =====================================
+   4,5-column grid for featured products
+   ===================================== */
+.grid--4 {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(4, 1fr);
+}
+.grid--5 {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+@media (max-width: 1024px) {
+  .grid--4,
+  .grid--5 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .grid--4,
+  .grid--5 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Make product cards a bit more interactive - hover animation */
+.product-card {
+  transition:
+    transform 0.16s ease,
+    box-shadow 0.16s ease;
+  height: 500px;
+}
+
+.product-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+
+/* Ensure images fill card header nicely */
+.product-card .card__media {
+  height: 200px;
+}
+
+.product-card .card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Button full-width on mobile if you like (optional) */
+.product-card__btn {
+  margin-top: 4px;
+}
+
+.product-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  /* ensures full clickable block */
+}
+
+.product-card-link article {
+  cursor: pointer;
+}
+
+.product-features {
+  margin: 0.75rem 0 0;
+  padding-left: 1.1rem;
+  list-style: disc;
+  font-size: 0.9rem;
+  color: #4a5568;
+  /* soft dark gray */
+  line-height: 1;
+}
+
+.product-features li {
+  margin-bottom: 0.15rem;
+}
+
+.product-features li strong {
+  color: #1a202c;
+  /* darker emphasis */
+  font-weight: 600;
+}
+
+/* =====================================
+   Projects section (Tamamladığımız Layihələr)
+   ===================================== */
+.projects {
+  padding: 56px 0;
+}
+
+.projects .section__title {
+  margin-bottom: 6px;
+}
+
+.projects p.muted {
+  max-width: 880px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--muted);
+}
+
+/* Grid: 4 columns on large screens, 2 on tablet, 1 on mobile */
+.projects__grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 18px;
+}
+
+/* Project card specifics (extends .card) */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+  cursor: default;
+  min-height: 320px;
+  height: 100%;
+  cursor: pointer;
+  align-items: stretch;
+}
+
+/* Hover / focus lift */
+.project-card:hover,
+.project-card:focus-within {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
+}
+
+/* Media area: keep consistent aspect ratio */
+.project-card .card__media {
+  position: relative;
+  height: 190px;
+  background: #f3f5f7;
+  overflow: hidden;
+}
+
+/* Image fills area */
+.project-card .card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s ease;
+}
+
+/* subtle zoom on hover */
+.project-card:hover .card__media img,
+.project-card:focus-within .card__media img {
+  transform: scale(1.04);
+}
+
+/* optional overlay for readability */
+.project-card .card__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 30%,
+    rgba(13, 33, 63, 0.12) 100%
+  );
+  pointer-events: none;
+}
+
+/* Body */
+.project-card .card__body {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+/* Title and meta */
+.project-card h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--brand);
+}
+
+.project-card p.muted {
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Year / meta */
+.project-card .card__meta {
+  margin-top: auto;
+  font-size: 13px;
+  color: rgba(13, 33, 63, 0.6);
+  font-weight: 600;
+}
+
+/* Make the whole card keyboard-accessible if you add links later */
+.project-card[tabindex] {
+  outline: none;
+}
+
+.project-card:focus-visible {
+  box-shadow: 0 0 0 4px rgba(13, 33, 63, 0.12);
+  transform: translateY(-6px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .projects__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .projects__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card .card__media {
+    height: 160px;
+  }
+}
+
+/* =========== Footer =========== */
+
+/* =========================
+   FOOTER — ONE ROW, CLEAN
+   ========================= */
+
+.site-footer {
+  width: 100%;
+  background: #0d213f;
+  color: rgba(255, 255, 255, 0.92);
+  margin: 0;
+  padding: 0;
+}
+
+/* one-row grid */
+.site-footer__inner {
+  width: min(1500px, 92%);
+  margin: 0 auto;
+  padding: 34px 0 22px;
+
+  display: grid;
+  align-items: start;
+
+  /* Brand + 4 columns */
+  grid-template-columns: 2.2fr 1fr 1fr 1fr 1.2fr 1.2fr;
+  gap: 42px;
+
+  /* IMPORTANT: prevents wrapping into a second row */
+  grid-auto-rows: 1fr;
+}
+
+/* Brand column should not grow too tall */
+.site-footer__brand .site-footer__desc {
+  margin: 14px 0 0;
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.72);
+
+  /* prevents it from pushing layout down too much */
+  max-width: 520px;
+}
+
+/* Titles */
+.site-footer__title {
+  margin: 6px 0 12px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* Links */
+.site-footer__links,
+.site-footer__contact {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.site-footer__links a {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.78);
+  text-decoration: none;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+  white-space: nowrap; /* keeps columns compact */
+}
+
+/* links for each category as in header */
+.site-footer__links a:hover {
+  color: #ffffff;
+  transform: translateX(2px);
+  text-decoration: underline;
+}
+
+/* Contact pills should fit the column */
+.site-footer__contact a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.site-footer__contact a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+.site-footer__contact i {
+  width: 18px;
+  text-align: center;
+  opacity: 0.95;
+}
+
+/* Bottom bar */
+.site-footer__bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 12px 0;
+  margin: 0;
+  width: min(1500px, 92%);
+  margin: 0 auto;
+}
+
+/* Responsive: stack only on small screens */
+@media (max-width: 980px) {
+  .site-footer__inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 26px;
+  }
+
+  .site-footer__brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 560px) {
+  .site-footer__inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===============================
+   PAGE TRANSITION
+   =============================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  opacity: 1;
+  transition: opacity 0.35s ease;
+}
+
+body.page-exit {
+  opacity: 0;
+}
+
+/* ===============================
+   SMOOTH IMAGE LOADING
+   =============================== */
+
+/* Base image state */
+img {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+/* When image is fully loaded */
+img.is-loaded {
+  opacity: 1;
+}
+
+/* Prevent animation for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  img {
+    transition: none;
+  }
+}

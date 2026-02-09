@@ -1,0 +1,437 @@
+<!-- Contact page for GEFELL MMC website.
+
+  This page includes:
+  - Contact information (phone, WhatsApp, email, address, hours)
+  - Embedded Google Map with location
+  - Contact form that submits to Formspree
+  - Floating contact dock for quick access
+
+  The page is designed with accessibility and SEO in mind, using semantic HTML and ARIA attributes. -->
+
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Əlaqə | GEFELL MMC</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- SEO -->
+  <meta name="description" content="GEFELL MMC ilə əlaqə — telefon, email, ünvan, iş saatları və WhatsApp." />
+  <link rel="canonical" href="https://gefell.az/contact/contact.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Əlaqə | GEFELL MMC" />
+  <meta property="og:description" content="GEFELL MMC ilə əlaqə — telefon, email, ünvan və iş saatları." />
+  <meta property="og:image" content="https://gefell.az/assets/og-cover.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://gefell.az/contact/contact.html" />
+  <meta property="og:site_name" content="GEFELL" />
+  <meta property="og:locale" content="az_AZ" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Icons -->
+  <link rel="icon" type="image/png" href="/assets/favicon.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+
+  <!-- Theme -->
+  <meta name="theme-color" content="#0d213f" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/styles-home.css" />
+  <link rel="stylesheet" href="/contact/contact.css" />
+</head>
+
+
+<body>
+  <!-- ===============================
+     Header (same for all pages, but with active page indication in nav)
+     =============================== -->
+  <header class="header">
+    <div class="container header__row">
+      <!-- LEFT: BRAND LOGO-->
+      <a class="brand" href="/" aria-label="GEFELL Ana Səhifə">
+        <img src="/assets/logo_name.PNG" alt="GEFELL Logo" class="brand__logo brand__logo--word" />
+      </a>
+
+      <!-- RIGHT: NAVIGATION -->
+      <nav id="site-nav" class="nav" aria-label="Əsas naviqasiya">
+        <a href="/">Ana Səhifə</a>
+
+
+        <!-- ============ HAQQIMIZDA ============ -->
+        <div class="nav-dd nav-dd--split" id="aboutWrap">
+          <a class="nav-dd__link" href="/about/about.html">Haqqımızda</a>
+
+          <button class="nav-dd__toggle" id="aboutBtn" type="button" aria-haspopup="menu" aria-expanded="false"
+            aria-label="Haqqımızda alt menyu">
+            <svg class="nav-dd__arrow" viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+
+          <ul class="nav-dd__menu" id="aboutMenu" role="menu" hidden>
+            <li role="none"><a role="menuitem" href="/about/about.html#intro">Şirkət Təqdimatı</a></li>
+            <li role="none"><a role="menuitem" href="/about/about.html#projects">Layihələr</a></li>
+            <li role="none"><a role="menuitem" href="/about/about.html#faq">FAQ</a></li>
+            <li role="none"><a role="menuitem" href="/news/news.html">Xəbərlər</a></li>
+          </ul>
+        </div>
+
+        <!-- ============ KATEQORİYALAR ============ -->
+        <div class="nav-dd nav-dd--split" id="catWrap">
+          <a class="nav-dd__link" href="/categories/categories.html">Kateqoriyalar</a>
+
+          <button class="nav-dd__toggle" id="catBtn" type="button" aria-haspopup="menu" aria-expanded="false"
+            aria-label="Kateqoriyalar alt menyu">
+            <svg class="nav-dd__arrow" viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+
+          <ul class="nav-dd__menu" id="catMenu" role="menu" hidden>
+            <li role="none"><a role="menuitem" href="/categories/categories.html#accessories">Aksesuarlar</a></li>
+            <li role="none"><a role="menuitem" href="/categories/categories.html#profiles">Profillər</a></li>
+          </ul>
+        </div>
+
+
+        <!-- ============ YÜKLƏMƏLƏR ============ -->
+        <div class="nav-dd nav-dd--split" id="dlWrap">
+          <a class="nav-dd__link" href="/downloads/downloads.html">Yükləmələr</a>
+
+          <button class="nav-dd__toggle" id="dlBtn" type="button" aria-haspopup="menu" aria-expanded="false"
+            aria-label="Yükləmələr alt menyu">
+            <svg class="nav-dd__arrow" viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- ============ ELAQE ============ -->
+        <a href="/contact/contact.html" aria-label="Əlaqə" aria-current="page">
+          <span>Əlaqə</span>
+        </a>
+
+        <!-- START: LANGUAGE MENU  -->
+
+        <!-- button with popup mennu -->
+        <div class="lang-wrap">
+          <button class="lang" id="langBtn" aria-haspopup="menu" aria-expanded="false">
+            <img class="lang__flag" src="/assets/flags/az.svg" alt="" />
+            <span class="lang__code">AZ</span>
+            <svg class="lang__arrow" viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+
+          <!-- aria-current -> current lang; data-lang for js -->
+          <ul class="lang__menu" id="langMenu" role="menu" hidden>
+            <li role="menuitem" data-lang="az" aria-current="true">
+              <span class="lang__row">
+                <img class="lang__flag" src="/assets/flags/az.svg" alt="" />
+                <span>AZ</span>
+              </span>
+            </li>
+
+            <!-- These languages are under construction :) -->
+
+            <!-- <li role="menuitem" data-lang="en">
+              <span class="lang__row">
+                <img class="lang__flag" src="/assets/flags/en.svg" alt="" />
+                <span>EN</span>
+              </span>
+            </li>
+            <li role="menuitem" data-lang="ru">
+              <span class="lang__row">
+                <img class="lang__flag" src="/assets/flags/ru.svg" alt="" />
+                <span>RU</span>
+              </span>
+            </li> -->
+          </ul>
+        </div>
+
+        <!-- END: LANGUAGE MENU -->
+
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===============================
+     FLOATING CONTACT DOCK (Font Awesome used for icons)
+     =============================== -->
+  <nav class="contact-dock" aria-label="Sürətli əlaqə">
+
+    <!-- PHONE -->
+    <!-- aria-hidden hides the icons from screen readers since it is nonsense for them to hear icons -->
+    <a class="contact-item phone" href="tel:+994502266683" aria-label="Bizə zəng et: +994 50 226 66 83"
+      title="Zəng: +994 50 226 66 83">
+      <i class="fa-solid fa-phone icon" aria-hidden="true"></i>
+      <span class="label">Zəng et</span>
+    </a>
+
+    <!-- WHATSAPP -->
+    <!-- target = _blank opens new tab and noopener noreferrer hides user data in newly opened tab-->
+    <a class="contact-item whatsapp" href="https://wa.me/994502266683" target="_blank"
+      rel="noopener noreferrer nofollow" aria-label="WhatsApp ilə yaz" title="WhatsApp ilə yaz">
+      <i class="fa-brands fa-whatsapp icon" aria-hidden="true"></i>
+      <span class="label">WhatsApp</span>
+    </a>
+
+    <!-- EMAIL -->
+    <a class="contact-item email" href="mailto:info@gefell.az" aria-label="E-poçt yaz" title="E-poçt: info@gefell.az">
+      <i class="fa-solid fa-envelope icon" aria-hidden="true"></i>
+      <span class="label">E-poçt</span>
+    </a>
+  </nav>
+
+  <!-- ========= 
+   Page hero 
+   ========= -->
+  <section class="section contact-hero">
+    <div class="container">
+      <h1 class="section__title section__title--left">Əlaqə</h1>
+      <p class="muted contact-hero__desc">
+        Qiymət sorğusu, texniki məsləhət və ya əməkdaşlıq təklifləri üçün bizimlə əlaqə saxlayın.
+        Sorğunuzu göndərin — ən qısa zamanda geri dönüş edəcəyik.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ========= 
+   Contact content 
+   ========= -->
+  <section class="section contact-content">
+    <div class="container contact-grid">
+
+      <!-- LEFT -->
+      <div class="contact-left">
+
+        <!-- Contact info -->
+        <div class="card contact-card">
+          <h2 class="contact-card__title">Əlaqə məlumatları</h2>
+
+          <div class="contact-list">
+            <div>
+              <span class="contact-label">Telefon</span>
+              <a href="tel:+994502266683" class="contact-value" style="text-decoration: underline;">+994 50 226 66
+                83</a>
+            </div>
+
+            <div>
+              <span class="contact-label">WhatsApp</span>
+              <a href="https://wa.me/994502266683" target="_blank" rel="noopener" class="contact-value"
+                style="text-decoration: underline;">
+                Birbaşa yazın
+              </a>
+            </div>
+
+            <div>
+              <span class="contact-label">Email</span>
+              <a href="mailto:info@gefell.az" class="contact-value"
+                style="text-decoration: underline;">info@gefell.az</a>
+            </div>
+
+            <div>
+              <span class="contact-label">Ünvan</span>
+              <span class="contact-value">
+                Bakı şəhəri, Nərimanov rayonu, Karvan küçəsi, giriş 150
+              </span>
+            </div>
+
+            <div>
+              <span class="contact-label">İş saatları</span>
+              <span class="contact-value">B.e – Cümə: 09:00–18:00
+                <br />Şənbə: 09:00–13:00
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Map -->
+        <div class="card contact-map">
+          <div class="contact-map__head">
+            <h2>Xəritə</h2>
+            <p class="muted">Ünvanımızı xəritədə görə bilərsiniz.</p>
+          </div>
+
+          <iframe title="GEFELL MMC ünvan xəritəsi"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3036.9392185054867!2d49.865228676730396!3d40.43234477143709!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x403089f7112b5341%3A0x3ff080e80fa64439!2sGEFELL!5e0!3m2!1sru!2saz!4v1770374655294!5m2!1sru!2saz"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+          <div class="contact-map__footer">
+            <a class="about-home__cta" href="https://maps.app.goo.gl/tuJsKwxqLJxamg8NA" target="_blank" rel="noopener">
+              Xəritədə aç
+              <span class="about-home__cta-icon">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="card contact-form">
+        <h2>Bizə mesaj göndərin</h2>
+        <p class="muted">
+          Formu doldurun — mesajınız bizə çatacaq və ən qısa zamanda geri dönüş ediləcək.
+        </p>
+
+        <form id="contactForm" action="https://formspree.io/f/mlgwdrpw" method="POST">
+          <label>
+            Ad Soyad
+            <input type="text" name="name" required autocomplete="name" />
+          </label>
+
+          <label>
+            Email
+            <input type="email" name="email" required autocomplete="email" />
+          </label>
+
+          <label>
+            Telefon (istəyə bağlı)
+            <input type="tel" name="phone" autocomplete="tel" />
+          </label>
+
+          <label>
+            Mesaj
+            <textarea name="message" rows="6" required placeholder="Nə barədə yazmaq istəyirsiniz?"></textarea>
+          </label>
+
+          <!-- Anti-spam (hidden) -->
+          <input type="text" name="_gotcha" style="display:none" />
+
+          <!-- Redirect after success (optional) -->
+          <input type="hidden" name="_subject" value="GEFELL MMC — Yeni əlaqə mesajı" />
+
+          <button type="submit" class="about-home__cta" id="submitBtn">
+            Göndər
+            <span class="about-home__cta-icon">→</span>
+          </button>
+
+          <div id="formStatus" class="muted form-status" aria-live="polite"></div>
+
+        </form>
+      </div>
+
+
+    </div>
+  </section>
+
+
+  <!-- ================= 
+    Footer 
+   ================= -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+
+      <!-- Brand -->
+      <div class="site-footer__brand">
+        <a href="/">
+          <img src="/assets/logo_name.PNG" alt="GEFELL MMC — pəncərə və qapı aksesuarları" />
+        </a>
+        <p class="site-footer__desc">
+          GEFELL MMC — pəncərə və qapı sistemləri üçün yüksək keyfiyyətli aksesuar və profillərin təchizatı üzrə
+          ixtisaslaşmış şirkətdir. Sertifikatlı, Avropa standartlarına uyğun həllər təqdim edirik.
+
+        </p>
+      </div>
+
+      <!-- Haqqımızda -->
+      <div>
+        <h4 class="site-footer__title">Haqqımızda</h4>
+        <ul class="site-footer__links">
+          <li><a href="/about/about.html#intro">Şirkət Təqdimatı</a></li>
+          <li><a href="/about/about.html#projects">Layihələr</a></li>
+          <li><a href="/about/about.html#faq">FAQ</a></li>
+          <li><a href="/news/news.html">Xəbərlər</a></li>
+        </ul>
+      </div>
+
+      <!-- Kateqoriyalar -->
+      <div>
+        <h4 class="site-footer__title">Kateqoriyalar</h4>
+        <ul class="site-footer__links">
+          <li><a href="/categories/categories.html#profiles">Profillər</a></li>
+          <li><a href="/categories/categories.html#accessories">Aksesuarlar</a></li>
+        </ul>
+      </div>
+
+
+      <!-- Yükləmələr -->
+      <div>
+        <h4 class="site-footer__title">Yükləmələr</h4>
+        <ul class="site-footer__links">
+          <li><a href="/downloads/downloads.html">Yükləmələr</a></li>
+        </ul>
+      </div>
+
+      <!-- Əlaqə -->
+      <div>
+        <h4 class="site-footer__title">Əlaqə</h4>
+
+        <ul class="site-footer__links">
+          <li><a href="/contact/contact.html">Əlaqə</a></li>
+        </ul>
+      </div>
+
+      <!-- Əlaqə vasitələri -->
+      <div class="site-footer__contact-col">
+        <h4 class="site-footer__title">Bizimlə əlaqə</h4>
+
+        <ul class="site-footer__contact">
+          <li>
+            <a href="tel:+994502266683" aria-label="Bizə zəng et: +994 50 226 66 83">
+              <i class="fa-solid fa-phone" aria-hidden="true"></i>
+              <span>+994 50 226 66 83</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://wa.me/994502266683" target="_blank" rel="noopener noreferrer nofollow"
+              aria-label="Bizə WhatsAppdan yaz: +994 50 226 66 83">
+              <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+              <span>WhatsApp</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="mailto:info@gefell.az" aria-label="Bizə mail at: info@gefell.az">
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+              <span>info@gefell.az</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+
+    </div>
+
+    <!-- Bottom bar: auto year with JS -->
+    <div class="site-footer__bottom">
+      &copy;<span id="currentYear"></span> GEFELL MMC. Bütün hüquqlar qorunur.
+    </div>
+  </footer>
+
+
+  <!-- ================= Script Include ================= -->
+
+  <!-- Load the shared JS with 'defer' so it executes after parsing HTML (faster first paint). -->
+  <script src="/script.js" defer></script>
+  <script src="/contact/contact.js" defer></script>
+</body>
+
+</html>
