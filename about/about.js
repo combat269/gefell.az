@@ -38,17 +38,16 @@
     });
   }
 
-  // ===== FAQ: allow only one open at a time (optional but professional) =====
+  // ===== FAQ: allow multiple open at the same time =====
   const faqWrap = document.querySelector("[data-faq]");
+
   if (faqWrap) {
     const items = Array.from(faqWrap.querySelectorAll("details"));
 
     items.forEach((item) => {
       item.addEventListener("toggle", () => {
-        if (!item.open) return;
-        items.forEach((x) => {
-          if (x !== item) x.open = false;
-        });
+        // No auto-closing behavior
+        // Each question works independently
       });
     });
   }
@@ -58,19 +57,19 @@
    ABOUT PAGE JS
    - FAQ accordion (only one open)
    =============================== */
-(() => {
-  const faqWrap = document.querySelector("[data-faq]");
-  if (!faqWrap) return;
+// (() => {
+//   const faqWrap = document.querySelector("[data-faq]");
+//   if (!faqWrap) return;
 
-  const items = Array.from(faqWrap.querySelectorAll("details.faq-item"));
+//   const items = Array.from(faqWrap.querySelectorAll("details.faq-item"));
 
-  items.forEach((d) => {
-    d.addEventListener("toggle", () => {
-      if (!d.open) return;
-      // close others
-      items.forEach((x) => {
-        if (x !== d) x.open = false;
-      });
-    });
-  });
-})();
+//   items.forEach((d) => {
+//     d.addEventListener("toggle", () => {
+//       if (!d.open) return;
+//       // close others
+//       items.forEach((x) => {
+//         if (x !== d) x.open = false;
+//       });
+//     });
+//   });
+// })();
