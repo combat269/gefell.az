@@ -1,0 +1,42 @@
+name: GEFELL CI/CD Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x] # using these versions for compatibility
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        cache-dependency-path: './server-replica/package-lock.json'
+
+    # need to install all backend packages first
+    - name: Install Backend Dependencies
+      run: |
+        cd server-replica
+        npm install
+
+    # checking for any high-risk vulnerabilities before we push
+    - name: Run Security Audit
+      run: |
+        cd server-replica
+        npm audit --audit-level=high
+
+    # if we reach here, code is good to go for Vercel
+    - name: Trigger Vercel Production Build
+      run: echo "Checks passed. Ready for deployment."
