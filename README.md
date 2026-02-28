@@ -1,37 +1,39 @@
-# GEFELL MMC - Corporate Platform
+# GEFELL MMC - Corporate Platform & Backend Architecture
 
-[Live Website](https://gefell.az)
+This repository contains the source code for the GEFELL MMC corporate website, a window and door accessories company based in Baku, Azerbaijan. It includes both the production frontend and a replica of the backend system architecture.
 
-## 📌 Overview
-This repository contains the full-stack source code for the official corporate website of GEFELL MMC, a company specializing in window and door accessories. Developed to establish the company's digital presence, showcase dynamic product catalogs, and streamline client inquiries.
+## 🌐 Live Demo
+The live production frontend can be viewed at: **[gefell.az](https://gefell.az)**
 
-## 🏗️ Architecture & Tech Stack
-This project is structured as a monorepo containing both the client-side UI and the server-side API.
+---
 
-**Frontend (`/frontend`)**
-* **Technologies:** HTML5, CSS3, Vanilla JavaScript
-* **Features:** Responsive UI, dynamic product rendering, multilingual support architecture.
-* **Deployment:** Vercel
+## 🏗️ System Architecture & Setup
 
-**Backend (`/backend`)**
-* **Technologies:** Node.js, Express.js
-* **Database:** PostgreSQL
-* **Security:** JWT (JSON Web Tokens) for secure admin routing
-* **Features:** RESTful API for inventory management, secure admin dashboard authentication, database schemas for hardware lines.
+**Important Note on the Backend:**
+To comply with company data privacy and hosting constraints, the live website is currently deployed as a static, frontend-only build optimized for speed. 
 
-## ✨ Key Features
-* **Dynamic Product Catalog:** PostgreSQL database manages various window and door hardware lines, served via Express API.
-* **Secure Admin Access:** JWT-based authentication ensures only authorized company staff can update website content.
-* **Responsive UI/UX:** Seamless browsing experience across desktop and mobile devices for prospective clients.
+However, the complete backend architecture I designed for the system is included in the `server-replica` directory. This replica demonstrates the backend logic, database structure, and security measures used for the company's inventory management, without exposing sensitive corporate data or actual database credentials.
 
-## 🚀 Local Setup
-Instructions on how to run the project locally.
+### Tech Stack
+* **Frontend:** HTML5, CSS3, JavaScript (ES6+)
+* **Backend Server:** Node.js, Express.js
+* **Database:** PostgreSQL (with normalized schema and indexing for 1000+ records)
+* **Caching:** Redis (to reduce database load on product catalog reads)
+* **Security:** JWT (JSON Web Tokens) for role-based admin access
+* **CI/CD:** GitHub Actions for automated deployment pipelines
 
-### Prerequisites
-* Node.js
-* PostgreSQL
+---
 
-### Installation
-1. Clone the repository: `git clone https://github.com/combat269/gefell.az.git`
-2. **Backend:** Navigate to `/backend`, run `npm install`, set up your `.env` variables, and start the server with `npm start`.
-3. **Frontend:** Navigate to `/frontend` and open `index.html` in your browser or use a live server extension.
+## 📁 Repository Structure
+
+* `/` *(Root)* - Contains the frontend files (HTML, CSS, JS) used in the live production build.
+* `/server-replica` - The backend architecture replica.
+  * `/config` - PostgreSQL connection pool, Redis client setup, and the database schema (`schema.sql`).
+  * `/controllers` - Business logic for fetching and updating inventory.
+  * `/middleware` - JWT authentication and admin role verification.
+  * `/models` - Database interaction models.
+  * `/routes` - API endpoints for the public catalog and secure admin dashboard.
+* `/.github/workflows` - CI/CD pipeline configuration (`deploy.yml`).
+
+---
+
