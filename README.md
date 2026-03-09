@@ -1,197 +1,127 @@
-# GEFELL.AZ  
-**Corporate Platform Architecture (Frontend Live • Backend Designed)**
+# GEFELL.AZ
+**Corporate Platform — Production Frontend · Designed Backend**
+
+🌐 **Live:** [gefell.az](https://gefell.az)
 
 ---
 
 ## Overview
 
-This repository contains the source code for the official website of **GEFELL MMC**, a window and door hardware distributor operating with showroom and warehouse infrastructure.
+Official web platform for **GEFELL MMC**, a window and door hardware distributor operating with showroom and warehouse infrastructure in Azerbaijan.
 
-The project currently consists of:
-
-- A production frontend (live)
-- A structured backend architecture (not yet deployed)
-
-The backend is intentionally kept isolated from production until operational requirements (inventory automation, admin dashboard, warehouse integration) are finalized.
-
-**Live website:** https://gefell.az
+The frontend is live in production. The backend is fully architected and implemented, held in isolation until warehouse integration and admin workflows are operationally ready for deployment.
 
 ---
 
-## System Architecture
+## Architecture
 
-### Current Production Setup
+### Production (Current)
 
-Static Frontend deployed via Vercel CDN.
+```
+Client → Static Frontend → Vercel CDN
+```
 
-### Planned Full Architecture
+### Planned Full Stack
 
 ```
 Client
   ↓
-REST API (Node.js + Express)
+REST API  (Node.js + Express)
   ↓
 PostgreSQL
   ↓
-Redis (Caching Layer)
+Redis  (Caching Layer)
 ```
 
-The backend implementation exists inside the `server-replica/` directory and represents the designed API system.
+---
+
+## Frontend
+
+**Stack:** HTML5 · CSS3 · Vanilla JS (ES6+) · Vercel
+
+**Key decisions:**
+- No framework — minimizes bundle size and maximizes Lighthouse scores
+- Static deployment chosen for speed, cost efficiency, and SEO-first structure
+- Folder-based routing with clear separation of layout, logic, and assets
+
+The current business workflow doesn't require dynamic rendering. Static deployment is the right tool for this stage.
 
 ---
 
-## Frontend (Production)
+## Backend (`server-replica/`)
 
-### Stack
-
-- HTML5 (semantic structure)
-- CSS3 (custom layout system)
-- Vanilla JavaScript (ES6+)
-- Hosted on Vercel
-
-### Design Decisions
-
-- No heavy frameworks to minimize bundle size
-- Static deployment for maximum performance
-- SEO-first structure
-- Folder-based routing
-- Separation of layout, logic, and assets
-
-The current business workflow does not require dynamic API-driven rendering. Static deployment was chosen for simplicity, speed, and cost efficiency.
-
----
-
-## Backend (Replica Architecture – Not Live)
-
-Located in:
+A complete REST API architecture prepared for production, kept local until business operations require it.
 
 ```
 server-replica/
-```
-
-The backend is a REST API architecture prepared for:
-
-- Product CRUD operations
-- Inventory management
-- Admin authentication
-- Role-based access control
-- Warehouse integration
-- Future e-commerce expansion
-
-### Why It Is Not Deployed
-
-The backend is intentionally not live because:
-
-1. Business operations are currently managed manually.
-2. Warehouse system integration is still pending.
-3. Deploying prematurely would increase infrastructure cost.
-4. Exposing API endpoints without finalized authentication would increase security risk.
-
-The system is engineered first and deployed when required by business logic.
-
----
-
-## Backend Structure
-
-```
-server-replica/
-│
 ├── config/
-│   ├── db.js          → PostgreSQL connection pooling
-│   ├── redis.js       → Redis client configuration
-│   └── schema.sql     → Database schema
-│
+│   ├── db.js              → PostgreSQL connection pooling
+│   ├── redis.js           → Redis client setup
+│   └── schema.sql         → Full database schema
 ├── controllers/
 │   └── productController.js
-│
 ├── middleware/
-│   └── auth.js        → JWT verification & role checks
-│
+│   └── auth.js            → JWT verification & role-based access
 ├── models/
-│   └── Product.js     → Data abstraction layer
-│
+│   └── Product.js         → Data abstraction layer
 ├── routes/
 │   └── productRoutes.js
-│
-├── server.js          → Express app bootstrap
+├── server.js              → Express app entry point
 └── package.json
 ```
+
+**Covers:**
+- Product CRUD
+- Inventory management
+- Admin authentication with role-based access control
+- Warehouse integration hooks
+- Future e-commerce expansion path
+
+**Why not deployed yet:**
+Business operations are still managed manually, warehouse integration is pending, and exposing API endpoints before authentication is finalized is an unnecessary security risk. The system is engineered first — deployed when the business requires it.
 
 ---
 
 ## Engineering Decisions
 
-### Express
-Chosen for minimal overhead and flexibility.
+**Express** — minimal overhead, maximum flexibility for a custom REST surface.
 
-### PostgreSQL
-Relational model fits structured inventory:
+**PostgreSQL** — relational model fits structured inventory (products, categories, brands, stock levels). Normalized schema scales beyond 1,000+ SKUs without restructuring.
 
-- Products
-- Categories
-- Brands
-- Admin users
-- Stock tracking
+**Redis** — prepared to cache high-read product listings, reduce DB load, and support horizontal scaling. Not active until traffic justifies the overhead.
 
-Normalization allows scalability beyond 1,000+ products.
-
-### Redis
-Prepared to:
-
-- Cache high-read product listings
-- Reduce database load
-- Improve response times
-- Enable horizontal scaling later
-
-### MVC Separation
-
-- Routes → API surface
-- Controllers → Business logic
-- Models → Data layer
-- Middleware → Security & validation
-
-Clear separation improves maintainability and testing.
+**MVC pattern** — routes own the API surface, controllers own business logic, models own data access, middleware owns security. Clean separation makes each layer independently testable.
 
 ---
 
-## Database Design (Planned Entities)
+## Database Schema (Planned)
 
-- products
-- categories
-- brands
-- admin_users
-- stock_levels
-- orders (future)
+`products` · `categories` · `brands` · `admin_users` · `stock_levels` · `orders` *(future)*
 
-Schema is normalized and indexed for read-heavy workloads.
+Normalized, indexed for read-heavy workloads.
 
 ---
 
-## Security Considerations
-
-Planned for production:
+## Security (Planned for Production)
 
 - JWT authentication
 - Role-based access control
 - Input validation middleware
 - Rate limiting
-- Environment-based configuration
-- Separation of credentials from repository
-
-Backend remains local to avoid exposing API before authentication and warehouse integration are finalized.
+- Environment-based credential management — no secrets in repository
 
 ---
 
 ## CI/CD
 
-`.github/workflows/deploy.yml` is included to support automated deployment pipelines once backend transitions to production.
+`.github/workflows/deploy.yml` is included and ready to trigger automated deployment once the backend moves to production.
 
 ---
 
-## Development Roadmap
+## Roadmap
 
 - [x] Static frontend deployment
-- [x] Backend architectural design
+- [x] Backend architectural design & implementation
 - [ ] Database finalization
 - [ ] Admin authentication
 - [ ] Warehouse API integration
@@ -200,22 +130,3 @@ Backend remains local to avoid exposing API before authentication and warehouse 
 
 ---
 
-## What This Project Demonstrates
-
-- Production frontend deployment
-- Backend system architecture design
-- Database normalization
-- Caching strategy preparation
-- Security planning
-- DevOps pipeline preparation
-- Engineering decisions aligned with business constraints
-
-This repository represents an evolving full-stack system designed for scalable corporate infrastructure.
-
----
-
-## Author
-
-Mulkum Badalov  
-Computer Engineering Student – METU  
-Focus: Backend Systems & Scalable Architecture
