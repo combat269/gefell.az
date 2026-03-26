@@ -966,6 +966,18 @@ a {
   color: #0a66c2;
 }
 
+.contact-item.instagram {
+  color: #E1306C;
+}
+
+.contact-item.tiktok {
+  color: #111111;
+}
+
+.contact-item.youtube {
+  color: #FF0000;
+}
+
 .contact-item:active {
   transform: scale(0.98);
 }
@@ -1391,7 +1403,9 @@ a {
   padding: 0;
   margin: 0;
   display: grid;
-  gap: 10px;
+  grid-template-columns: repeat(2, max-content);
+  gap: 10px 12px;
+  align-items: start;
 }
 
 .site-footer__links a {
@@ -1429,8 +1443,10 @@ a {
   transition:
     background-color 0.2s ease,
     transform 0.2s ease;
-  width: fit-content;
+
+  width: 100%;
   max-width: 100%;
+  box-sizing: border-box;
 }
 
 .site-footer__contact a:hover {
@@ -1442,6 +1458,13 @@ a {
   width: 18px;
   text-align: center;
   opacity: 0.95;
+}
+
+/* Mobile behavior for footer contact links */
+@media (max-width: 768px) {
+  .site-footer__contact {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Bottom bar */
