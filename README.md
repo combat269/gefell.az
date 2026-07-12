@@ -1,132 +1,115 @@
-# GEFELL.AZ
-**Corporate Platform — Production Frontend · Designed Backend**
+# GEFELL MMC — Trilingual Corporate Website
 
-🌐 **Live:** [gefell.az](https://gefell.az)
+A production website for **GEFELL MMC**, a Baku-based supplier of window and door
+profile and hardware systems, representing four international brands
+(GEALAN, KNG, SIEGENIA, AXOR). Built from scratch as a static, no-framework
+site with a custom design system, full trilingual content, and a real,
+working contact pipeline.
 
----
-
-## Overview
-
-Official web platform for **GEFELL MMC**, a window and door hardware distributor operating with showroom and warehouse infrastructure in Azerbaijan.
-
-The frontend is live in production. The backend is fully architected and implemented, held in isolation until warehouse integration and admin workflows are operationally ready for deployment.
+**Live:** [gefell.az](https://gefell.az)
 
 ---
 
-## Architecture
+## What this project actually is
 
-### Production (Current)
+Not a template. Every page, every product description, every FAQ answer,
+and every piece of copy was written specifically for this business — in
+three languages — then wired into a hand-built design system called
+**Architectural v4**: a light, high-contrast, technical-drawing-inspired
+aesthetic (hairline rules, monospace labels, a blueprint-blue accent) that
+fits a company selling precision hardware.
+
+- **6 pages** × **3 languages** = **18 fully localized routes**
+- **14 real products** across 4 brands, each with technical specs pulled
+  from actual manufacturer documentation
+- **13 real FAQ items**, **3 news articles**, a working contact form wired
+  to a live backend
+
+## Tech stack
+
+Deliberately simple — no framework, no build step, no bundler.
+
+- **HTML / CSS / vanilla JS** — one shared stylesheet (`styles-v4.css`)
+  and one shared script (`script-v4.js`) power every page in every
+  language
+- **Hosting:** [Vercel](https://vercel.com), static deployment
+- **Forms:** [Formspree](https://formspree.io), submitted via `fetch()`
+  with inline success/error states instead of a page redirect
+- **Fonts:** Archivo (display), Inter (body), JetBrains Mono (labels/specs)
+
+## Notable engineering details
+
+**Trilingual architecture with persistent language memory.** Each
+language lives at its own path (`/`, `/ru/`, `/en/`) with matching
+`hreflang` tags on every page. A small script remembers the last language
+a visitor explicitly chose and auto-redirects future visits to that
+language's version of _the same page_ — but only when that page's
+translation actually exists, so it never sends anyone to a 404.
+
+**Self-documenting placeholders.** Product photos, videos, and documents
+that aren't uploaded yet render as a clean dashed placeholder showing the
+_exact_ filename the system expects — so dropping in the real file at
+that path is the only step needed, no code changes required.
+
+**Structured data (SEO).** JSON-LD schema across the site, generated
+programmatically from the live page content (not hand-typed, to guarantee
+it never drifts out of sync with what's actually on the page):
+
+| Page       | Schema type                                             |
+| ---------- | ------------------------------------------------------- |
+| Home       | `HomeAndConstructionBusiness`                           |
+| About      | `FAQPage` (13 questions)                                |
+| Categories | `Product` (14 products)                                 |
+| News       | `NewsArticle` (3 articles)                              |
+| Contact    | `HomeAndConstructionBusiness` with real geo-coordinates |
+
+**Certificate viewer.** Brand certification documents are click-to-zoom
+via a lightweight lightbox, reused across every brand section with zero
+duplicated JavaScript.
+
+## Project structure
 
 ```
-Client → Static Frontend → Vercel CDN
+/                       AZ (default language)
+├── index.html
+├── about/about.html
+├── categories/categories.html
+├── news/news.html
+├── contact/contact.html
+├── downloads/downloads.html
+├── ru/                 Russian — mirrors the structure above
+├── en/                 English — mirrors the structure above
+├── assets/             shared images, brand logos, certificates
+├── styles-v4.css        shared stylesheet for every page/language
+├── script-v4.js         shared JS: nav, language memory, lightbox, forms
+├── sitemap.xml
+└── robots.txt
 ```
 
-### Planned Full Stack
+## Design system
 
-```
-Client
-  ↓
-REST API  (Node.js + Express)
-  ↓
-PostgreSQL
-  ↓
-Redis  (Caching Layer)
-```
+| Token      | Value     | Use                              |
+| ---------- | --------- | -------------------------------- |
+| `--ink`    | `#14181F` | primary text                     |
+| `--paper`  | `#FBFAF7` | background                       |
+| `--panel`  | `#F2F0EA` | section backgrounds              |
+| `--accent` | `#1F5AAE` | "blueprint blue" — links, CTAs   |
+| `--brass`  | `#9A7B4F` | secondary accent, used sparingly |
 
----
+## Running locally
 
-## Frontend
+Static site, no dependencies — but absolute paths mean you need a real
+server, not just opening the HTML file directly:
 
-**Stack:** HTML5 · CSS3 · Vanilla JS (ES6+) · Vercel
-
-**Key decisions:**
-- No framework — minimizes bundle size and maximizes Lighthouse scores
-- Static deployment chosen for speed, cost efficiency, and SEO-first structure
-- Folder-based routing with clear separation of layout, logic, and assets
-
-The current business workflow doesn't require dynamic rendering. Static deployment is the right tool for this stage.
-
----
-
-## Backend (`server-replica/`)
-
-A complete REST API architecture prepared for production, kept local until business operations require it.
-
-```
-server-replica/
-├── config/
-│   ├── db.js              → PostgreSQL connection pooling
-│   ├── redis.js           → Redis client setup
-│   └── schema.sql         → Full database schema
-├── controllers/
-│   └── productController.js
-├── middleware/
-│   └── auth.js            → JWT verification & role-based access
-├── models/
-│   └── Product.js         → Data abstraction layer
-├── routes/
-│   └── productRoutes.js
-├── server.js              → Express app entry point
-└── package.json
+```bash
+python3 -m http.server 3000
+# or
+npx serve
 ```
 
-**Covers:**
-- Product CRUD
-- Inventory management
-- Admin authentication with role-based access control
-- Warehouse integration hooks
-- Future e-commerce expansion path
+Then visit `http://localhost:3000/`.
 
-**Why not deployed yet:**
-Business operations are still managed manually, warehouse integration is pending, and exposing API endpoints before authentication is finalized is an unnecessary security risk. The system is engineered first — deployed when the business requires it.
+## Author
 
----
-
-## Engineering Decisions
-
-**Express** — minimal overhead, maximum flexibility for a custom REST surface.
-
-**PostgreSQL** — relational model fits structured inventory (products, categories, brands, stock levels). Normalized schema scales beyond 1,000+ SKUs without restructuring.
-
-**Redis** — prepared to cache high-read product listings, reduce DB load, and support horizontal scaling. Not active until traffic justifies the overhead.
-
-**MVC pattern** — routes own the API surface, controllers own business logic, models own data access, middleware owns security. Clean separation makes each layer independently testable.
-
----
-
-## Database Schema (Planned)
-
-`products` · `categories` · `brands` · `admin_users` · `stock_levels` · `orders` *(future)*
-
-Normalized, indexed for read-heavy workloads.
-
----
-
-## Security (Planned for Production)
-
-- JWT authentication
-- Role-based access control
-- Input validation middleware
-- Rate limiting
-- Environment-based credential management — no secrets in repository
-
----
-
-## CI/CD
-
-`.github/workflows/deploy.yml` is included and ready to trigger automated deployment once the backend moves to production.
-
----
-
-## Roadmap
-
-- [x] Static frontend deployment
-- [x] Backend architectural design & implementation
-- [ ] Database finalization
-- [ ] Admin authentication
-- [ ] Warehouse API integration
-- [ ] Production backend deployment
-- [ ] Monitoring & logging
-
----
-
+Built and maintained by [Your Name] — a full rebuild of the company's
+existing site into a modern, trilingual, SEO-complete corporate presence.

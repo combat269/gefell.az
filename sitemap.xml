@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://www.gefell.az/</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://www.gefell.az/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.gefell.az/ru/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gefell.az/en/"/>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.gefell.az/ru/</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://www.gefell.az/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.gefell.az/ru/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gefell.az/en/"/>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.gefell.az/en/</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://www.gefell.az/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.gefell.az/ru/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gefell.az/en/"/>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://www.gefell.az/about/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://www.gefell.az/about/about.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.gefell.az/ru/about/about.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gefell.az/en/about/about.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.gefell.az/ru/about/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://www.gefell.az/about/about.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.gefell.az/ru/about/about.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gefell.az/en/about/about.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.gefell.az/en/about/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://www.gefell.az/about/about.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.gefell.az/ru/about/about.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gefell.az/en/about/about.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.gefell.az/categories/categories.html</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://www.gefell.az/categories/categories.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.gefell.az/ru/categories/categories.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gefell.az/en/categories/categories.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.gefell.az/ru/categories/categories.html</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://www.gefell.az/categories/categories.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.gefell.az/ru/categories/categories.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gefell.az/en/categories/categories.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.gefell.az/en/categories/categories.html</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://www.gefell.az/categories/categories.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.gefell.az/ru/categories/categories.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gefell.az/en/categories/categories.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.gefell.az/news/news.html</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://www.gefell.az/news/news.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.gefell.az/ru/news/news.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gefell.az/en/news/news.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gefell.az/ru/news/news.html</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://www.gefell.az/news/news.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.gefell.az/ru/news/news.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gefell.az/en/news/news.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gefell.az/en/news/news.html</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://www.gefell.az/news/news.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.gefell.az/ru/news/news.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gefell.az/en/news/news.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.gefell.az/downloads/downloads.html</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://www.gefell.az/downloads/downloads.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.gefell.az/ru/downloads/downloads.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gefell.az/en/downloads/downloads.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.gefell.az/ru/downloads/downloads.html</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://www.gefell.az/downloads/downloads.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.gefell.az/ru/downloads/downloads.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gefell.az/en/downloads/downloads.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.gefell.az/en/downloads/downloads.html</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://www.gefell.az/downloads/downloads.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.gefell.az/ru/downloads/downloads.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gefell.az/en/downloads/downloads.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.gefell.az/contact/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://www.gefell.az/contact/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.gefell.az/ru/contact/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gefell.az/en/contact/contact.html"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.gefell.az/ru/contact/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://www.gefell.az/contact/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.gefell.az/ru/contact/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gefell.az/en/contact/contact.html"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.gefell.az/en/contact/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://www.gefell.az/contact/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.gefell.az/ru/contact/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gefell.az/en/contact/contact.html"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+</urlset>

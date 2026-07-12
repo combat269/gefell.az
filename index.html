@@ -1,807 +1,641 @@
-<!-- ===============================
-
-FILE: index.html -> HOMEPAGE
-Project: GEFELL MMC Website
-
-================================ -->
-
 <!doctype html>
 <html lang="az">
 
-<!-- Head section: encoding, responsiveness, SEO, fonts, styles, metadata -->
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- different title design for main page for SEO -->
-  <title>GEFELL MMC — Pəncərə və Qapı Aksesuarları</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Haqqımızda | GEFELL MMC</title>
 
-  <!-- Load fonts earlier for performance -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap"
+        rel="stylesheet" />
 
-  <!-- Page summary for SEO -->
-  <meta name="description"
-    content="GEFELL MMC — PVC və alüminium pəncərə/qapı sistemləri üçün aksesuarlar və profillər. Yerli stok, sürətli çatdırılma, peşəkar dəstək." />
+    <meta name="description"
+        content="GEFELL MMC — pəncərə və qapı sistemləri üçün premium aksesuar və profil həllərinin təchizatı üzrə ixtisaslaşmış şirkət. GEALAN, KNG, SIEGENIA, AXOR ilə tərəfdaşlıq tarixçəmiz, layihələrimiz və komandamız haqqında." />
+    <link rel="stylesheet" href="/styles-v4.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <link rel="canonical" href="https://gefell.az/about/about.html">
 
-  <!-- CSS file used in this HTML -->
-  <link rel="stylesheet" href="/styles-home.css" />
+    <link rel="alternate" hreflang="az" href="https://www.gefell.az/about/about.html">
+    <link rel="alternate" hreflang="ru" href="https://www.gefell.az/ru/about/about.html">
+    <link rel="alternate" hreflang="en" href="https://www.gefell.az/en/about/about.html">
+    <link rel="alternate" hreflang="x-default" href="https://www.gefell.az/about/about.html">
 
-
-  <!-- Load icons-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
-
-  <!-- Title icon -->
-  <link rel="icon" type="image/png" href="/assets/favicon.png">
-
-  <!-- Homepage essential/preferred link -->
-  <link rel="canonical" href="https://gefell.az/">
-
-  <!-- Open Graph (OG) meta tags for social media sharing -->
-  <meta property="og:title" content="GEFELL — Pəncərə və Qapı Aksesuarları">
-  <meta property="og:description"
-    content="PVC və alüminium sistemlər üçün aksesuarlar və profillər. Yerli stok, sürətli çatdırılma, peşəkar dəstək.">
-  <meta property="og:image" content="https://gefell.az/assets/og-cover.jpg">
-  <meta property="og:url" content="https://gefell.az/">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="GEFELL">
-
-  <meta name="google-site-verification" content="_wuAZX75vt8CVh8VQrMPau9Vh59sWu5oThHw3u4aJag" />
-
-
-  <!-- Mobile phone theme color -->
-  <meta name="theme-color" content="#0d213f" />
-
-
-  <meta property="og:locale" content="az_AZ" />
-  <!-- for twitter -->
-  <meta name="twitter:title" content="GEFELL MMC — Pəncərə və Qapı Aksesuarları">
-  <meta name="twitter:description"
-    content="PVC və alüminium pəncərə və qapı sistemləri üçün aksesuarlar və profillər. Yerli stok, sürətli çatdırılma.">
-  <meta name="twitter:image" content="https://gefell.az/assets/og-cover.jpg">
-
-  <!-- For search engines -->
-  <meta name="robots" content="index, follow">
-
-
-
+    <meta property="og:title" content="Haqqımızda | GEFELL MMC">
+    <meta property="og:description"
+        content="Premium pəncərə və qapı sistemləri təchizatçısı. Tərəfdaşlıq tarixçəmiz, layihələrimiz və komandamız.">
+    <meta property="og:image" content="https://gefell.az/assets/og-cover.jpg">
+    <meta property="og:url" content="https://gefell.az/about/about.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="GEFELL">
+    <meta property="og:locale" content="az_AZ" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Haqqımızda | GEFELL MMC">
+    <meta name="twitter:description"
+        content="Premium pəncərə və qapı sistemləri təchizatçısı. Tərəfdaşlıq tarixçəmiz və layihələrimiz.">
+    <meta name="twitter:image" content="https://gefell.az/assets/og-cover.jpg">
+    <meta name="theme-color" content="#FBFAF7" />
+    <meta name="robots" content="index, follow">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Topdan satış edirsiniz?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bəli. Topdan satış şərtləri sifariş həcmi və məhsul qrupuna görə formalaşır. Ətraflı məlumat üçün bizimlə əlaqə saxlayın."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Yerli stok mövcuddur?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bəli. Ən çox tələb olunan məhsullar üzrə yerli stok saxlayırıq. Stok vəziyyətini dəqiqləşdirmək üçün bizimlə əlaqə saxlayın."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hansı məhsul çeşidləri mövcuddur?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pəncərə və qapı sistemləri üçün geniş çeşiddə məhsullar mövcuddur: profil sistemləri, qapı/pəncərə aksesuarları, sürüşmə (HBSB) həlləri və uyğun komponentlər. Hansı sistem üçün axtardığınızı yazın — sizə uyğun variantları təqdim edək."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Texniki məsləhət verirsiniz?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bəli. Layihəyə uyğun sistem seçimi, komplektasiya və tətbiq üzrə texniki dəstək göstəririk. Ətraflı məlumat üçün bizimlə əlaqə saxlayın."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Sifariş və çatdırılma necə həyata keçirilir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sifariş təsdiqləndikdən sonra stok mövcudluğuna uyğun çatdırılma planlanır və koordinasiya edilir. Çatdırılma müddəti məhsul və həcmlə bağlı dəyişə bilər — dəqiqləşdirmək üçün əlaqə saxlayın."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Məhsullar zəmanətlidirmi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bəli. Portfelimizdə yer alan əsas brendlərin məhsulları istehsalçı tərəfindən 10 il rəsmi zəmanət ilə təqdim olunur. Zəmanət detalları məhsul qrupuna görə dəqiqləşdirilə bilər."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Layihə üçün komplekt həll təqdim edirsiniz?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bəli. Layihə üçün profil və aksesuarları uyğun şəkildə komplektləşdirib təqdim edirik. Montaj/işçilik xidmətini isə istəyə uyğun olaraq tərəfdaş montaj komandalarımız həyata keçirə bilər."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qiymət təklifi almaq üçün nə lazımdır?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hansı sistemi istədiyinizi və təxmini ədəd sayını bildirməyiniz kifayətdir. Ölçülər və texniki detallar əlaqə zamanı dəqiqləşdirilə bilər."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Montaj xidməti göstərirsiniz?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Biz təchizatçıyıq. Montaj işləri istəyə uyğun olaraq tərəfdaş montaj komandaları ilə koordinasiya oluna bilər. Ətraflı məlumat üçün bizimlə əlaqə saxlayın."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Yeni brendlər və məhsullar nə vaxt əlavə olunur?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Portfelimiz bazar tələbi və layihə ehtiyaclarına əsasən mərhələli şəkildə genişləndirilir. Yeniliklər üçün bizimlə əlaqə saxlaya bilərsiniz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Şou-rum və ya anbara baxmaq mümkündür?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bəli. Görüş təyin etməklə məhsullar üzrə təqdimat və nümunələr göstərilə bilər. Vaxt təyin etmək üçün bizimlə əlaqə saxlayın."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Texniki kataloq və ya sertifikatları paylaşa bilərsiniz?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Texniki kataloqlar və mövcud sertifikatlar saytımızda açıq şəkildə paylaşılmışdır. Yükləmələr səhifəsindən baxa və yükləyə bilərsiniz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Layihəyə uyğun məhsul seçimini necə edirsiniz?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Layihənin sistemi, istifadə məqsədi, ölçü və tələb olunan funksiyalara əsasən uyğun komplektasiya seçirik. Qısa məlumat göndərin — sizə ən uyğun variantı təqdim edək."
+      }
+    }
+  ]
+}
+  </script>
 </head>
-
-<!-- Visible content of the page begins here. -->
 
 <body>
 
-  <!-- ===============================
-     Header (same for all pages, but with active page indication in nav)
-     =============================== -->
-  <header class="header">
-    <div class="container header__row">
-      <!-- LEFT: BRAND LOGO-->
-      <a class="brand" href="/" aria-label="GEFELL Ana Səhifə">
-        <img src="/assets/logo_name.png" alt="GEFELL Logo" class="brand__logo brand__logo--word" />
-      </a>
-
-      <!-- RIGHT: NAVIGATION -->
-      <nav id="site-nav" class="nav" aria-label="Əsas naviqasiya">
-        <a href="/" aria-current="page">Ana Səhifə</a>
-
-
-        <!-- ============ HAQQIMIZDA ============ -->
-        <div class="nav-dd nav-dd--split" id="aboutWrap">
-          <a class="nav-dd__link" href="/about/about.html">Haqqımızda</a>
-
-          <button class="nav-dd__toggle" id="aboutBtn" type="button" aria-haspopup="menu" aria-expanded="false"
-            aria-label="Haqqımızda alt menyu">
-            <svg class="nav-dd__arrow" viewBox="0 0 16 16" aria-hidden="true">
-              <path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-          </button>
-
-          <ul class="nav-dd__menu" id="aboutMenu" role="menu" hidden>
-            <li role="none"><a role="menuitem" href="/about/about.html#intro">Şirkət Təqdimatı</a></li>
-            <li role="none"><a role="menuitem" href="/about/about.html#projects">Layihələr</a></li>
-            <li role="none"><a role="menuitem" href="/about/about.html#faq">FAQ</a></li>
-            <li role="none"><a role="menuitem" href="/news/news.html">Xəbərlər</a></li>
-          </ul>
+    <header class="hdr" id="hdr">
+        <div class="hdr__row">
+            <a class="hdr__logo" href="/" aria-label="GEFELL Ana Səhifə"><img src="/assets/logo_name.png"
+                    alt="GEFELL" /></a>
+            <nav class="hdr__nav" aria-label="Əsas naviqasiya">
+                <a href="/about/about.html" aria-current="page">Haqqımızda</a>
+                <a href="/categories/categories.html">Kateqoriyalar</a>
+                <a href="/news/news.html">Xəbərlər</a>
+                <a href="/downloads/downloads.html">Yükləmələr</a>
+                <a href="/contact/contact.html">Əlaqə</a>
+            </nav>
+            <div class="hdr__actions">
+                <a class="hdr__phone" href="tel:+994502266683">+994 50 226 66 83</a>
+                <div class="lang-v4" id="langWrap">
+                    <button class="lang-v4__btn" id="langBtn" aria-haspopup="menu" aria-expanded="false">AZ <span
+                            class="arw">▾</span></button>
+                    <ul class="lang-v4__menu" id="langMenu" role="menu" hidden>
+                        <li role="menuitem" aria-current="true">AZ — Azərbaycan</li>
+                        <li role="menuitem"><a href="/ru/about/about.html">RU — Русский</a></li>
+                        <li role="menuitem"><a href="/en/about/about.html">EN — English</a></li>
+                    </ul>
+                </div>
+                <a class="btn btn--accent"
+                    href="https://wa.me/994502266683?text=Salam%21%20GEFELL%20MMC%2C%20sayt%C4%B1n%C4%B1z%20%C3%BCz%C9%99rind%C9%99n%20yaz%C4%B1ram%20%E2%80%94%20sisteml%C9%99riniz%20haqq%C4%B1nda%20%C9%99trafl%C4%B1%20m%C9%99lumat%20v%C9%99%20qiym%C9%99t%20t%C9%99klifi%20almaq%20ist%C9%99yir%C9%99m."
+                    target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Sorğu göndər</a>
+                <button class="burger" id="burger" aria-label="Menyu"
+                    aria-expanded="false"><span></span><span></span><span></span></button>
+            </div>
         </div>
+    </header>
 
-        <!-- ============ KATEQORİYALAR ============ -->
-        <div class="nav-dd nav-dd--split" id="catWrap">
-          <a class="nav-dd__link" href="/categories/categories.html">Kateqoriyalar</a>
-
-          <button class="nav-dd__toggle" id="catBtn" type="button" aria-haspopup="menu" aria-expanded="false"
-            aria-label="Kateqoriyalar alt menyu">
-            <svg class="nav-dd__arrow" viewBox="0 0 16 16" aria-hidden="true">
-              <path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-          </button>
-
-          <ul class="nav-dd__menu" id="catMenu" role="menu" hidden>
-            <li role="none"><a role="menuitem" href="/categories/categories.html#accessories">Aksesuarlar</a></li>
-            <li role="none"><a role="menuitem" href="/categories/categories.html#profiles">Profillər</a></li>
-          </ul>
+    <div class="mmenu" id="mmenu">
+        <a href="/">Ana Səhifə</a>
+        <a href="/about/about.html">Haqqımızda</a>
+        <a href="/categories/categories.html">Kateqoriyalar</a>
+        <a href="/news/news.html">Xəbərlər</a>
+        <a href="/downloads/downloads.html">Yükləmələr</a>
+        <a href="/contact/contact.html">Əlaqə</a>
+        <div class="mmenu__foot">
+            <a href="tel:+994502266683">+994 50 226 66 83</a>
+            <a href="mailto:info@gefell.az">info@gefell.az</a>
         </div>
+    </div>
 
+    <main>
+        <section class="sec" id="intro">
+            <div class="wrap">
+                <div class="abt-intro">
+                    <div class="abt-intro__text" data-r>
+                        <span class="eyebrow">Haqqımızda</span>
+                        <h1 class="sec__title" style="margin:22px 0 24px;">GEFELL MMC</h1>
+                        <p class="sec__lead" style="max-width:58ch; font-size:17px;">GEFELL MMC pəncərə və qapı
+                            sistemləri üçün premium aksesuar və profil həllərinin təchizatı üzrə ixtisaslaşmış
+                            şirkətdir. Məhsul deyil, tam texniki həll təklif edirik.</p>
+                    </div>
+                    <div class="abt-intro__media" data-r><img src="/about/company-team.webp"
+                            alt="GEFELL MMC komandası — pəncərə və qapı sistemləri üzrə peşəkarlar" loading="lazy" />
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <!-- ============ YÜKLƏMƏLƏR ============ -->
-        <div class="nav-dd nav-dd--split" id="dlWrap">
-          <a class="nav-dd__link" href="/downloads/downloads.html">Yükləmələr</a>
+        <section class="sec sec--ink">
+            <div class="wrap">
+                <div class="sec__head" data-r>
+                    <h2 class="sec__title">Məqsədimiz və Dəyərlərimiz</h2>
+                </div>
+                <div class="vlist" data-r>
+                    <div class="vrow">
+                        <div class="vrow__n">01</div>
+                        <div class="vrow__t">Məqsədimiz</div>
+                        <div class="vrow__d">Layihələr üçün düzgün sistem həllini təqdim etmək, keyfiyyət, təhlükəsizlik
+                            və uzunömürlülük arasında optimal balans yaratmaqdır. Biz məhsul deyil, tam texniki həll
+                            təklif edirik.</div>
+                    </div>
+                    <div class="vrow">
+                        <div class="vrow__n">02</div>
+                        <div class="vrow__t">Niyə GEFELL?</div>
+                        <div class="vrow__d">Komandamız pəncərə və qapı sənayesində 30 ildən artıq real bazar
+                            təcrübəsinə malik mütəxəssislərdən formalaşmışdır. Bu təcrübə layihələri yalnız satış deyil,
+                            texniki və mühəndislik əsaslı yanaşma ilə qiymətləndirməyə imkan verir.</div>
+                    </div>
+                    <div class="vrow">
+                        <div class="vrow__n">03</div>
+                        <div class="vrow__t">Üstünlüklərimiz</div>
+                        <div class="vrow__d">Yalnız etibarlı və beynəlxalq səviyyədə tanınmış brendlərlə əməkdaşlıq;
+                            layihəyə uyğun sistem seçimi və texniki dəstək; uzunmüddətli əməkdaşlığa fokuslanan yanaşma;
+                            yerli bazarın tələblərini dərindən anlayan komanda.</div>
+                    </div>
+                    <div class="vrow">
+                        <div class="vrow__n">04</div>
+                        <div class="vrow__t">Kimlərlə işləyirik</div>
+                        <div class="vrow__d">İstehsalçılar, montaj şirkətləri, tikinti və layihə təşkilatları, eləcə də
+                            fərdi peşəkarlarla əməkdaşlıq edirik. Məqsədimiz qısamüddətli satış deyil, uzunmüddətli və
+                            etibarlı iş münasibətləri qurmaqdır.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-          <button class="nav-dd__toggle" id="dlBtn" type="button" aria-haspopup="menu" aria-expanded="false"
-            aria-label="Yükləmələr alt menyu">
-            <svg class="nav-dd__arrow" viewBox="0 0 16 16" aria-hidden="true">
-              <path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-          </button>
+        <section class="sec" id="timeline">
+            <div class="wrap">
+                <div class="sec__head" data-r>
+                    <div><span class="eyebrow" style="margin-bottom:20px;">Tarixçə</span>
+                        <h2 class="sec__title">Tərəfdaşlıq və İnkişaf Yolumuz</h2>
+                    </div>
+                    <p class="sec__lead">Fəaliyyətimizi mərhələli şəkildə genişləndirərək müxtəlif sistem kateqoriyaları
+                        üzrə premium brendlərlə strateji tərəfdaşlıqlar qurmuşuq.</p>
+                </div>
+
+                <div class="bmatrix" data-r>
+                    <div class="bcard">
+                        <div class="bcard__clip">
+                            <div class="bcard__bg bcard__bg--gealan"></div>
+                            <div class="bcard__wash"></div>
+                        </div>
+                        <div class="bcard__content">
+                            <div class="bcard__top">
+                                <h3 class="bcard__name">GEALAN</h3>
+                                <div class="bcard__tags"><span class="btag btag--type">PVC Profil</span><span
+                                        class="btag">Mənşə: Almaniya 🇩🇪</span></div>
+                            </div>
+                            <p class="bcard__desc">GEALAN ilə əməkdaşlıq portfelimizin əsas profil platformasını
+                                formalaşdırdı. Alman mühəndisliyinə əsaslanan S8000, S9000 və LINEAR sistemləri
+                                vasitəsilə etibarlı, enerji-səmərəli PVC profil həlləri təqdim edirik.</p>
+                            <details class="tcard">
+                                <summary class="tcard__toggle">Daha ətraflı <span class="tcard__chev">▾</span></summary>
+                                <div class="tcard__body">
+                                    <p>GEALAN PVC profil sistemləri sahəsində Avropanın aparıcı istehsalçılarından
+                                        biridir və müxtəlif layihə miqyasları üçün nəzərdə tutulmuş geniş məhsul
+                                        portfeli ilə tanınır.</p>
+                                    <ul class="bcard__points">
+                                        <li><strong>S8000</strong> — balanslaşdırılmış istilik izolyasiyası və geniş
+                                            tətbiq sahəsi</li>
+                                        <li><strong>S9000</strong> — yüksək enerji səmərəliliyi və iri ölçülü
+                                            konstruksiyalar üçün uyğunluq</li>
+                                        <li><strong>LINEAR</strong> — müasir dizayn, incə xətlər və premium görünüş</li>
+                                    </ul>
+                                    <p class="tcard__official">Rəsmi veb sayt: <a href="https://www.gealan.de/az"
+                                            target="_blank" rel="noopener noreferrer nofollow">www.gealan.de/az</a></p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+
+                    <div class="bcard">
+                        <div class="bcard__clip">
+                            <div class="bcard__bg bcard__bg--siegenia"></div>
+                            <div class="bcard__wash"></div>
+                        </div>
+                        <div class="bcard__content">
+                            <div class="bcard__top">
+                                <h3 class="bcard__name">SIEGENIA</h3>
+                                <div class="bcard__tags"><span class="btag btag--type">Aksesuar</span><span
+                                        class="btag">Mənşə: Almaniya 🇩🇪</span></div>
+                            </div>
+                            <p class="bcard__desc">SIEGENIA ilə tərəfdaşlıq edərək PVC və PVC-kanallı alüminium
+                                profillər üçün aksesuar portfelimizi gücləndirdik. TITAN seriyası ilə etibarlı,
+                                təhlükəsiz və uzunömürlü həllər təqdim edirik.</p>
+                            <details class="tcard">
+                                <summary class="tcard__toggle">Daha ətraflı <span class="tcard__chev">▾</span></summary>
+                                <div class="tcard__body">
+                                    <p>SIEGENIA pəncərə və qapı sistemləri üçün aksesuar sahəsində Almaniya mənşəli
+                                        aparıcı istehsalçılardan biridir — mexaniki dəqiqlik, təhlükəsizlik və istifadə
+                                        rahatlığı ilə tanınır.</p>
+                                    <ul class="bcard__points">
+                                        <li><strong>TITAN sistemi</strong> — modul quruluş, stabil mexanika və yüksək
+                                            sıxılma xətti</li>
+                                        <li><strong>Uyğunluq</strong> — PVC profillər və PVC-kanallı alüminium profil
+                                            variantları</li>
+                                        <li><strong>Fokus</strong> — təhlükəsizlik, rahat açılma və uzunömürlü istismar
+                                        </li>
+                                    </ul>
+                                    <p class="tcard__official">Rəsmi veb sayt: <a href="https://www.siegenia.com/ru"
+                                            target="_blank" rel="noopener noreferrer nofollow">www.siegenia.com</a></p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+
+                    <div class="bcard">
+                        <div class="bcard__clip">
+                            <div class="bcard__bg bcard__bg--axor"></div>
+                            <div class="bcard__wash"></div>
+                        </div>
+                        <div class="bcard__content">
+                            <div class="bcard__top">
+                                <h3 class="bcard__name">AXOR</h3>
+                                <div class="bcard__tags"><span class="btag btag--type">PVC Profil</span><span
+                                        class="btag btag--type">Aksesuar</span><span class="btag">Mənşə: Ukrayna
+                                        🇺🇦</span></div>
+                            </div>
+                            <p class="bcard__desc">AXOR ilə tərəfdaşlıq edərək furnitura portfelimizi genişləndirdik —
+                                layihələr üçün daha çevik komplektasiya və alternativ sistem seçimi imkanları yaratdıq.
+                            </p>
+                            <details class="tcard">
+                                <summary class="tcard__toggle">Daha ətraflı <span class="tcard__chev">▾</span></summary>
+                                <div class="tcard__body">
+                                    <p>AXOR pəncərə sistemləri üçün aksesuar sahəsində beynəlxalq bazarda tanınan
+                                        istehsalçılardan biridir; etibarlı mexanika, sabit işləmə və layihəyə uyğun
+                                        komplektasiya yanaşması ilə seçilir.</p>
+                                    <ul class="bcard__points">
+                                        <li><strong>Üstünlük</strong> — etibarlı mexanizm və stabil işləmə</li>
+                                        <li><strong>Uyğunluq</strong> — müxtəlif PVC və PVC-kanallı alüminium profil
+                                            sistemləri</li>
+                                        <li><strong>Fokus</strong> — çevik komplektasiya və layihəyə uyğun seçim</li>
+                                    </ul>
+                                    <p class="tcard__official">Rəsmi veb sayt: <a href="https://ukr.axorindustry.com/"
+                                            target="_blank" rel="noopener noreferrer nofollow">www.axorindustry.com</a>
+                                    </p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+
+                    <div class="bcard">
+                        <div class="bcard__clip">
+                            <div class="bcard__bg bcard__bg--kng"></div>
+                            <div class="bcard__wash"></div>
+                        </div>
+                        <div class="bcard__content">
+                            <div class="bcard__top">
+                                <h3 class="bcard__name">KNG</h3>
+                                <div class="bcard__tags"><span class="btag btag--type">Aksesuar</span><span
+                                        class="btag">Mənşə: Çin 🇨🇳</span></div>
+                            </div>
+                            <p class="bcard__desc">KNG ilə tərəfdaşlıq edərək alüminium pəncərə və qapı sistemləri üzrə
+                                portfelimizi gücləndirdik. Qlobal bazarda 70-dən çox ölkədə tətbiq olunan KNG həlləri
+                                yüksək daşıma qabiliyyəti ilə seçilir.</p>
+                            <details class="tcard">
+                                <summary class="tcard__toggle">Daha ətraflı <span class="tcard__chev">▾</span></summary>
+                                <div class="tcard__body">
+                                    <p>KNG alüminium pəncərə və qapı sistemləri üçün yüksək keyfiyyətli aksesuarların
+                                        istehsalı sahəsində qlobal səviyyədə fəaliyyət göstərən brendlərdən biridir.
+                                        Portfelimizdə əsasən alüminium profillər üçün nəzərdə tutulmuş sistemləri yer
+                                        alır və Qaldır-Sür (HBSB) daxil olmaqla ağır yüklü mexanizmlər üzrə geniş tətbiq
+                                        imkanları yaradır.</p>
+                                    <ul class="bcard__points">
+                                        <li><strong>Üstünlük</strong> — yüksək daşıma qabiliyyəti və stabil mexanika
+                                        </li>
+                                        <li><strong>Tətbiq</strong> — panoramik, geniş açılışlı və iri ölçülü alüminium
+                                            sistemlər</li>
+                                        <li><strong>Fokus</strong> — ağır yüklər üçün təhlükəsiz və rahat istifadə</li>
+                                    </ul>
+                                    <p class="tcard__official">Rəsmi veb sayt: <a href="http://en.kng.cn/"
+                                            target="_blank" rel="noopener noreferrer nofollow">www.kng.cn</a></p>
+                                    <p class="tcard__official">Rusiya üzrə rəsmi sayt: <a href="https://kng-russia.ru/"
+                                            target="_blank" rel="noopener noreferrer nofollow">www.kng-russia.ru</a></p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="sec sec--panel" id="projects">
+            <div class="wrap">
+                <div class="sec__head" data-r>
+                    <div><span class="eyebrow" style="margin-bottom:20px;">Referanslar</span>
+                        <h2 class="sec__title">Layihələr</h2>
+                    </div>
+                    <p class="sec__lead">GEFELL MMC məhsullarının tətbiq olunduğu seçilmiş yaşayış layihə nümunələri.
+                    </p>
+                </div>
+                <div class="pgrid pgrid--3" data-r>
+                    <div class="pcard"><span class="pcard__idx mono">01</span><img
+                            src="/assets/projects/seabreezeResort.jpg" alt="Seabreeze — Nardaran" loading="lazy" />
+                        <div class="pcard__info">
+                            <h3>Seabreeze</h3>
+                            <div class="loc">Nardaran</div>
+                            <div class="sys">GEALAN · SIEGENIA</div>
+                        </div>
+                    </div>
+                    <div class="pcard"><span class="pcard__idx mono">02</span><img src="/assets/projects/gold_star.webp"
+                            alt="Gold Star Residence — Bakı" loading="lazy" />
+                        <div class="pcard__info">
+                            <h3>Gold Star Residence</h3>
+                            <div class="loc">Bakı</div>
+                            <div class="sys">GEALAN · SIEGENIA</div>
+                        </div>
+                    </div>
+                    <div class="pcard"><span class="pcard__idx mono">03</span><img src="/assets/projects/luxe_home.jpg"
+                            alt="Luxe Home — Bakı" loading="lazy" />
+                        <div class="pcard__info">
+                            <h3>Luxe Home</h3>
+                            <div class="loc">Bakı</div>
+                            <div class="sys">GEALAN · AXOR</div>
+                        </div>
+                    </div>
+                    <div class="pcard"><span class="pcard__idx mono">04</span><img
+                            src="/assets/projects/sirvansahlar_residences.jpg" alt="Şirvanşahlar Residence — Bakı"
+                            loading="lazy" />
+                        <div class="pcard__info">
+                            <h3>Şirvanşahlar Residence</h3>
+                            <div class="loc">Bakı</div>
+                            <div class="sys">GEALAN · SIEGENIA</div>
+                        </div>
+                    </div>
+                    <div class="pcard"><span class="pcard__idx mono">05</span><img src="/assets/projects/novxani.webp"
+                            alt="Novxanı — 37 Villa" loading="lazy" />
+                        <div class="pcard__info">
+                            <h3>37 Şəxsi Villa</h3>
+                            <div class="loc">Novxanı</div>
+                            <div class="sys">GEALAN · SIEGENIA</div>
+                        </div>
+                    </div>
+                    <div class="pcard"><span class="pcard__idx mono">06</span><img src="/assets/projects/28_may.webp"
+                            alt="28 May Residence — Bakı" loading="lazy" />
+                        <div class="pcard__info">
+                            <h3>28 May Residence</h3>
+                            <div class="loc">Bakı</div>
+                            <div class="sys">GEALAN · SIEGENIA</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="sec" id="faq">
+            <div class="wrap">
+                <div class="sec__head" data-r>
+                    <div><span class="eyebrow" style="margin-bottom:20px;">Sual–Cavab</span>
+                        <h2 class="sec__title">Tez-tez verilən suallar</h2>
+                    </div>
+                    <p class="sec__lead">Müştərilərimizi ən çox maraqlandıran suallar və qısa cavablar.</p>
+                </div>
+                <div class="faq-v4" data-r>
+                    <details class="faq-v4__item">
+                        <summary>Topdan satış edirsiniz? <span class="faq-v4__ic">+</span></summary>
+                        <p>Bəli. Topdan satış şərtləri sifariş həcmi və məhsul qrupuna görə formalaşır. Ətraflı məlumat
+                            üçün bizimlə əlaqə saxlayın.</p>
+                    </details>
+                    <details class="faq-v4__item">
+                        <summary>Yerli stok mövcuddur? <span class="faq-v4__ic">+</span></summary>
+                        <p>Bəli. Ən çox tələb olunan məhsullar üzrə yerli stok saxlayırıq. Stok vəziyyətini
+                            dəqiqləşdirmək üçün bizimlə əlaqə saxlayın.</p>
+                    </details>
+                    <details class="faq-v4__item">
+                        <summary>Hansı məhsul çeşidləri mövcuddur? <span class="faq-v4__ic">+</span></summary>
+                        <p>Pəncərə və qapı sistemləri üçün geniş çeşiddə məhsullar mövcuddur: profil sistemləri,
+                            qapı/pəncərə aksesuarları, sürüşmə (HBSB) həlləri və uyğun komponentlər. Hansı sistem üçün
+                            axtardığınızı yazın — sizə uyğun variantları təqdim edək.</p>
+                    </details>
+                    <details class="faq-v4__item">
+                        <summary>Texniki məsləhət verirsiniz? <span class="faq-v4__ic">+</span></summary>
+                        <p>Bəli. Layihəyə uyğun sistem seçimi, komplektasiya və tətbiq üzrə texniki dəstək göstəririk.
+                            Ətraflı məlumat üçün bizimlə əlaqə saxlayın.</p>
+                    </details>
+                    <details class="faq-v4__item">
+                        <summary>Sifariş və çatdırılma necə həyata keçirilir? <span class="faq-v4__ic">+</span>
+                        </summary>
+                        <p>Sifariş təsdiqləndikdən sonra stok mövcudluğuna uyğun çatdırılma planlanır və koordinasiya
+                            edilir. Çatdırılma müddəti məhsul və həcmlə bağlı dəyişə bilər — dəqiqləşdirmək üçün əlaqə
+                            saxlayın.</p>
+                    </details>
+                    <details class="faq-v4__item">
+                        <summary>Məhsullar zəmanətlidirmi? <span class="faq-v4__ic">+</span></summary>
+                        <p>Bəli. Portfelimizdə yer alan əsas brendlərin məhsulları istehsalçı tərəfindən 10 il rəsmi
+                            zəmanət ilə təqdim olunur. Zəmanət detalları məhsul qrupuna görə dəqiqləşdirilə bilər.</p>
+                    </details>
+                    <details class="faq-v4__item">
+                        <summary>Layihə üçün komplekt həll təqdim edirsiniz? <span class="faq-v4__ic">+</span></summary>
+                        <p>Bəli. Layihə üçün profil və aksesuarları uyğun şəkildə komplektləşdirib təqdim edirik.
+                            Montaj/işçilik xidmətini isə istəyə uyğun olaraq tərəfdaş montaj komandalarımız həyata
+                            keçirə bilər.</p>
+                    </details>
+                    <details class="faq-v4__item">
+                        <summary>Qiymət təklifi almaq üçün nə lazımdır? <span class="faq-v4__ic">+</span></summary>
+                        <p>Hansı sistemi istədiyinizi və təxmini ədəd sayını bildirməyiniz kifayətdir. Ölçülər və
+                            texniki detallar əlaqə zamanı dəqiqləşdirilə bilər.</p>
+                    </details>
+                    <details class="faq-v4__item">
+                        <summary>Montaj xidməti göstərirsiniz? <span class="faq-v4__ic">+</span></summary>
+                        <p>Biz təchizatçıyıq. Montaj işləri istəyə uyğun olaraq tərəfdaş montaj komandaları ilə
+                            koordinasiya oluna bilər. Ətraflı məlumat üçün bizimlə əlaqə saxlayın.</p>
+                    </details>
+                    <details class="faq-v4__item">
+                        <summary>Yeni brendlər və məhsullar nə vaxt əlavə olunur? <span class="faq-v4__ic">+</span>
+                        </summary>
+                        <p>Portfelimiz bazar tələbi və layihə ehtiyaclarına əsasən mərhələli şəkildə genişləndirilir.
+                            Yeniliklər üçün bizimlə əlaqə saxlaya bilərsiniz.</p>
+                    </details>
+                    <details class="faq-v4__item">
+                        <summary>Şou-rum və ya anbara baxmaq mümkündür? <span class="faq-v4__ic">+</span></summary>
+                        <p>Bəli. Görüş təyin etməklə məhsullar üzrə təqdimat və nümunələr göstərilə bilər. Vaxt təyin
+                            etmək üçün bizimlə əlaqə saxlayın.</p>
+                    </details>
+                    <details class="faq-v4__item">
+                        <summary>Texniki kataloq və ya sertifikatları paylaşa bilərsiniz? <span
+                                class="faq-v4__ic">+</span></summary>
+                        <p>Texniki kataloqlar və mövcud sertifikatlar saytımızda açıq şəkildə paylaşılmışdır. <a
+                                href="/downloads/downloads.html" style="text-decoration:underline;">Yükləmələr</a>
+                            səhifəsindən baxa və yükləyə bilərsiniz.</p>
+                    </details>
+                    <details class="faq-v4__item">
+                        <summary>Layihəyə uyğun məhsul seçimini necə edirsiniz? <span class="faq-v4__ic">+</span>
+                        </summary>
+                        <p>Layihənin sistemi, istifadə məqsədi, ölçü və tələb olunan funksiyalara əsasən uyğun
+                            komplektasiya seçirik. Qısa məlumat göndərin — sizə ən uyğun variantı təqdim edək.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <span class="eyebrow cta__eyebrow" data-r>Əlaqə</span>
+            <h2 data-r>Layihənizə başlayaq</h2>
+            <div class="cta__actions" data-r>
+                <a class="btn btn--accent" href="https://wa.me/994502266683" target="_blank" rel="noopener"><i
+                        class="fa-brands fa-whatsapp"></i> WhatsApp ilə yazın</a>
+                <a class="btn btn--ghost" href="/contact/contact.html">Əlaqə səhifəsi <span class="arw">→</span></a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="ftr">
+        <div class="ftr__inner">
+            <div class="ftr__top">
+                <div class="ftr__brand">
+                    <img src="/assets/logo_name_white.png" alt="GEFELL MMC" />
+                    <p>Pəncərə və qapı sistemləri üçün yüksək keyfiyyətli aksesuar və profillərin təchizatı üzrə
+                        ixtisaslaşmış şirkət.</p>
+                    <div class="ftr__social">
+                        <a href="https://www.instagram.com/gefell.az/" target="_blank" rel="noopener"
+                            aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@gefell.az" target="_blank" rel="noopener"
+                            aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="https://www.youtube.com/@GEFELL_MMC" target="_blank" rel="noopener"
+                            aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://wa.me/994502266683" target="_blank" rel="noopener" aria-label="WhatsApp"><i
+                                class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Naviqasiya</h4>
+                    <ul>
+                        <li><a href="/about/about.html">Haqqımızda</a></li>
+                        <li><a href="/categories/categories.html">Kateqoriyalar</a></li>
+                        <li><a href="/news/news.html">Xəbərlər</a></li>
+                        <li><a href="/downloads/downloads.html">Yükləmələr</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Kateqoriya</h4>
+                    <ul>
+                        <li><a href="/categories/categories.html#profiles">Profillər</a></li>
+                        <li><a href="/categories/categories.html#accessories">Aksesuarlar</a></li>
+                        <li><a href="/about/about.html#projects">Layihələr</a></li>
+                        <li><a href="/about/about.html#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Əlaqə</h4>
+                    <ul>
+                        <li><a href="/contact/contact.html">Əlaqə səhifəsi</a></li>
+                        <li><a href="tel:+994502266683">+994 50 226 66 83</a></li>
+                        <li><a href="mailto:info@gefell.az">info@gefell.az</a></li>
+                        <li><a href="https://www.instagram.com/gefell.az/" target="_blank" rel="noopener">Instagram</a>
+                        </li>
+                        <li><a href="https://www.tiktok.com/@gefell.az" target="_blank" rel="noopener">TikTok</a></li>
+                        <li><a href="https://www.youtube.com/@GEFELL_MMC" target="_blank" rel="noopener">YouTube</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ftr__bottom"><span>© <span id="yr"></span> GEFELL MMC</span><span>Bakı, Nərimanov r., Karvan
+                    küç. 150</span></div>
         </div>
-
-        <!-- ============ ELAQE ============ -->
-        <a href="/contact/contact.html" aria-label="Əlaqə">
-          <span>Əlaqə</span>
-        </a>
-
-        <!-- START: LANGUAGE MENU  -->
-
-        <!-- button with popup mennu -->
-        <div class="lang-wrap">
-          <button class="lang" id="langBtn" aria-haspopup="menu" aria-expanded="false">
-            <img class="lang__flag" src="/assets/flags/az.svg" alt="" />
-            <span class="lang__code">AZ</span>
-            <svg class="lang__arrow" viewBox="0 0 16 16" aria-hidden="true">
-              <path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-          </button>
-
-          <!-- aria-current -> current lang; data-lang for js -->
-          <ul class="lang__menu" id="langMenu" role="menu" hidden>
-            <li role="menuitem" data-lang="az" aria-current="true">
-              <span class="lang__row">
-                <img class="lang__flag" src="/assets/flags/az.svg" alt="" />
-                <span>AZ</span>
-              </span>
-            </li>
-
-            <!-- These languages are under construction :) -->
-
-            <!-- <li role="menuitem" data-lang="en">
-              <span class="lang__row">
-                <img class="lang__flag" src="/assets/flags/en.svg" alt="" />
-                <span>EN</span>
-              </span>
-            </li>
-            <li role="menuitem" data-lang="ru">
-              <span class="lang__row">
-                <img class="lang__flag" src="/assets/flags/ru.svg" alt="" />
-                <span>RU</span>
-              </span>
-            </li> -->
-          </ul>
-        </div>
-
-        <!-- END: LANGUAGE MENU -->
-
-      </nav>
-    </div>
-  </header>
-
-  <!-- ===============================
-     FLOATING CONTACT DOCK (Font Awesome used for icons)
-     =============================== -->
-  <nav class="contact-dock" aria-label="Sürətli əlaqə">
-
-    <!-- PHONE -->
-    <!-- aria-hidden hides the icons from screen readers since it is nonsense for them to hear icons -->
-    <a class="contact-item phone" href="tel:+994502266683" aria-label="Bizə zəng et: +994 50 226 66 83"
-      title="Zəng: +994 50 226 66 83">
-      <i class="fa-solid fa-phone icon" aria-hidden="true"></i>
-      <span class="label">Zəng et</span>
-    </a>
-
-    <!-- WHATSAPP -->
-    <!-- target = _blank opens new tab and noopener noreferrer hides user data in newly opened tab-->
-    <a class="contact-item whatsapp" href="https://wa.me/994502266683" target="_blank"
-      rel="noopener noreferrer nofollow" aria-label="WhatsApp ilə yaz" title="WhatsApp ilə yaz">
-      <i class="fa-brands fa-whatsapp icon" aria-hidden="true"></i>
-      <span class="label">WhatsApp</span>
-    </a>
-
-    <!-- EMAIL -->
-    <a class="contact-item email" href="mailto:info@gefell.az" aria-label="E-poçt yaz" title="E-poçt: info@gefell.az">
-      <i class="fa-solid fa-envelope icon" aria-hidden="true"></i>
-      <span class="label">E-poçt</span>
-    </a>
-
-
-    <!-- INSTAGRAM -->
-    <a class="contact-item instagram" href="https://www.instagram.com/gefell.az/" target="_blank"
-      rel="noopener noreferrer nofollow" aria-label="Instagram səhifəmizə keçid" title="Instagram: @gefell.az">
-      <i class="fa-brands fa-instagram icon" aria-hidden="true"></i>
-      <span class="label">Instagram</span>
-    </a>
-
-    <!-- TIKTOK -->
-    <a class="contact-item tiktok" href="https://www.tiktok.com/@gefell.az" target="_blank"
-      rel="noopener noreferrer nofollow" aria-label="TikTok səhifəmizə keçid" title="TikTok: @gefell.az">
-      <i class="fa-brands fa-tiktok icon" aria-hidden="true"></i>
-      <span class="label">TikTok</span>
-    </a>
-
-    <!-- YOUTUBE -->
-    <a class="contact-item youtube" href="https://www.youtube.com/@GEFELL_MMC" target="_blank"
-      rel="noopener noreferrer nofollow" aria-label="YouTube kanalımıza keçid" title="YouTube: GEFELL MMC">
-      <i class="fa-brands fa-youtube icon" aria-hidden="true"></i>
-      <span class="label">YouTube</span>
-    </a>
-  </nav>
-
-
-
-  <!-- ===============================
-     Featured slider -> 5 slides with featured images under the Header
-     =============================== -->
-
-  <!-- aria-label is for screen readers -->
-  <section class="featured" aria-label="Seçilmiş sistemlər və məhsullar">
-    <div class="featured__wrap">
-      <div class="featured__track" id="featTrack" aria-live="polite">
-        <!--
-        Each slide is a <figure>: image + caption (caption is currently empty)
-        -->
-
-        <!-- Slide 1 KNG-->
-        <figure class="featured__slide" role="group" aria-roledescription="slide" aria-label="1 / 5">
-          <img src="/assets/KNG_CIFT_HERO.png" alt="KNG Alüminium Pəncərə Sistemi" decoding="async"
-            fetchpriority="high" />
-        </figure>
-
-        <!-- Slide 2 KNG -->
-        <figure class="featured__slide" role="group" aria-roledescription="slide" aria-label="2 / 5">
-          <img src="/assets/KNG_LS_HERO.png" alt="KNG Alüminium Qaldır-Sür (HBSB)  Sistemi" decoding="async"
-            loading="lazy" />
-        </figure>
-
-        <!-- Slide 3 AXOR-->
-        <figure class="featured__slide" role="group" aria-roledescription="slide" aria-label="3 / 5">
-          <img src="/assets/KNG_AXOR_HERO.png" alt="Axor PVC Pəncərə Sistemi" decoding="async" loading="lazy" />
-
-
-        </figure>
-
-        <!-- Slide 4 VBH-->
-        <figure class="featured__slide" role="group" aria-roledescription="slide" aria-label="4 / 5">
-          <img src="/assets/VBH_HERO.png" alt="SİEGENİA PVC Pəncərə Sistemi" decoding="async" loading="lazy" />
-
-        </figure>
-
-        <!-- Slide 5 GEALAN -->
-        <figure class="featured__slide" role="group" aria-roledescription="slide" aria-label="5 / 5">
-          <img src="/assets/GEALAN_HERO.png" alt="GEALAN PVC PROFİLİ" decoding="async" loading="lazy" />
-
-        </figure>
-      </div>
-
-      <!-- Controls: Previous / Next -->
-      <button class="featured__ctrl prev" aria-label="Əvvəlki şəkil" aria-controls="featTrack" type="button">
-
-        <!-- Svg is just an icon -->
-        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
-          <path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-            stroke-linejoin="round" />
-        </svg>
-      </button>
-
-      <button class="featured__ctrl next" aria-label="Növbəti şəkil" aria-controls="featTrack" type="button">
-
-        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
-          <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-            stroke-linejoin="round" />
-        </svg>
-      </button>
-
-      <!-- Dots: to navigate through slides -->
-      <div class="featured__dots" id="featDots" role="tablist" aria-label="Slayd göstəriciləri"></div>
-    </div>
-  </section>
-
-  <!-- ===============================
-     BRAND LOGO STRIP (STATIC)
-     =============================== -->
-  <section class="brand-strip" aria-label="İşlədiyimiz Brendlər">
-    <div class="container container--bleed">
-      <ul class="brand-strip__list">
-        <li><img src="/assets/brands/brand-gealan.svg" alt="GEALAN brendi" loading="lazy" decoding="async" /></li>
-        <li><img src="/assets/brands/brand-kng.svg" alt="KNG brendi" loading="lazy" decoding="async" /></li>
-        <li>
-          <img src="/assets/brands/brand-siegenia.svg" alt="SIEGENIA brendi" loading="lazy" decoding="async" />
-        </li>
-        <li><img src="/assets/brands/brand-axor.svg" alt="AXOR brendi " loading="lazy" decoding="async" /></li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ===============================
-     GEFELL — Company Intro + Strengths
-     =============================== -->
-
-  <section class="section about-home">
-    <div class="container about-home__grid">
-      <!-- LEFT: Text column-->
-      <div class="about-home__text">
-        <h2 class="section__title">
-          GEFELL MMC | Peşəkar Pəncərə və Qapı Aksesuarları və Premium Profil
-          Həlləri
-        </h2>
-
-        <p>
-          GEFELL MMC pəncərə və qapı sistemləri üçün yüksək keyfiyyətli
-          aksesuarların və profil həllərinin
-          <strong>topdan və pərakəndə</strong> satışı üzrə ixtisaslaşmış
-          təchizatçıdır. Portfelimiz yalnız
-          <strong>Avropa standartlarına tam uyğun</strong>, sertifikatlı və
-          uzunömürlü məhsullardan ibarətdir.
-        </p>
-
-        <p>
-          Bütün məhsullar <strong>10 il rəsmi zəmanət</strong> ilə təqdim
-          olunur. Məhsul çeşidimizdə
-          <strong>KNG, AXOR, GEALAN, VBH</strong> və bazarda etibarı sübut
-          olunmuş digər aparıcı brendlər yer alır.
-        </p>
-
-        <p>
-          Güclü təchizat zənciri sayəsində müştərilərimizə
-          <strong>rəqabətədavamlı və sərfəli qiymətlər</strong>
-          təklif edirik — keyfiyyətdən güzəşt etmədən optimal
-          qiymət–performans balansı ilə.
-        </p>
-
-        <!-- More button -->
-        <a href="/about/about.html" class="about-home__cta" aria-label="GEFELL MMC haqqında daha ətraflı məlumat">
-          Daha Ətraflı
-          <span class="about-home__cta-icon">
-            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-          </span>
-        </a>
-      </div>
-
-      <!-- RIGHT: Image on right (later change to some image realated to company) -->
-      <!-- lazy loading for showing the image whenever in viewport and decoding async for loading the image independently without interfering other renderings -->
-      <div class="about-home__visual">
-        <img src="/assets/KNG-HOMEPAGE-SAMPLE.jpg" alt="GEFELL MMC KNG Cüt açılım pəncərə sistemi" loading="lazy"
-          decoding="async" />
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= Featured products ================= -->
-  <section class="section">
-    <div class="container">
-      <h2 class="section__title">Seçilmiş Məhsullar</h2>
-
-      <div class="grid grid--5 product-grid">
-        <!-- Product 1 -->
-        <a href="/categories/categories.html#kng" class="product-card-link"
-          aria-label="KNG gizli menteşəli pəncərə sistemi - Ətraflı">
-          <article class="card product-card">
-            <div class="card__media">
-              <img src="/assets/featured_products/KNG_CIFT.png" alt="KNG gizli menteşəli pəncərə sistemi" loading="lazy"
-                decoding="async" />
-            </div>
-
-            <div class="card__body">
-              <h3>KNG Gizli Pəncərə Sistemi</h3>
-
-              <ul class="product-features">
-                <li><strong>160 kq</strong> standart daşıma (220 kq test edilmiş)</li>
-                <li><strong>180°</strong> tam açılma bucağı</li>
-                <li><strong>Gizli menteşə sistemi</strong> – premium minimal dizayn</li>
-                <li><strong>İnteqrə olunmuş</strong> mikro-ventilyasiya</li>
-                <li><strong>Daxili amortizator</strong> – külək zamanı yumşaq açılma</li>
-                <li><strong>304 paslanmayan polad</strong> konstruksiya</li>
-              </ul>
-            </div>
-          </article>
-        </a>
-
-        <!-- Product 2 -->
-
-        <a href="/categories/categories.html#siegenia" class="product-card-link"
-          aria-label="SIEGENIA TITAN Pəncərə Sistemi - Ətraflı">
-          <article class="card product-card">
-            <div class="card__media">
-              <img src="/assets/featured_products/TITAN.jpg" alt="SIEGENIA TITAN Pəncərə Profili" loading="lazy"
-                decoding="async" />
-            </div>
-
-            <div class="card__body">
-              <h3>SIEGENIA Pəncərə Sistemi</h3>
-
-              <ul class="product-features">
-
-                <li><strong>Avropa səviyyəli </strong> TITAN donanım sistemi</li>
-                <li><strong>Effektiv və tez yığılma</strong> mexanizmi</li>
-                <li><strong>RC3 səviyyəsinə qədər</strong> təhlükəsizlik imkanı</li>
-                <li><strong>Komfortlu və səssiz</strong> işləmə</li>
-                <li><strong>Mükəmməl sıxılma xətti</strong> və hava keçirməzlik</li>
-                <li><strong>Anti-korroziya</strong> örtükilə uzunömürlü istifadə</li>
-              </ul>
-            </div>
-          </article>
-        </a>
-
-        <!-- Product 3 -->
-        <a href="/categories/categories.html#axor" class="product-card-link"
-          aria-label="AXOR Komfort Line K-3 Pəncərə Sistemi - Ətraflı">
-          <article class="card product-card">
-            <div class="card__media">
-              <img src="/assets/featured_products/AXOR-K3.png" alt="AXOR Komfort Line K-3 Pəncərə Sistemi"
-                loading="lazy" decoding="async" />
-            </div>
-
-            <div class="card__body">
-              <h3>AXOR Pəncərə Sistemi</h3>
-
-              <ul class="product-features">
-                <li><strong>Sürətli və rahat</strong> quraşdırma sistemi</li>
-                <li><strong>Yüksək sıxılma</strong> və sabit işləmə</li>
-                <li><strong>Mikro və mərhələli</strong> ventilyasiya imkanı</li>
-                <li><strong>Səhv açılmaya qarşı</strong> qoruma mexanizmi</li>
-                <li><strong>Çərçivə sallanmasının qarşısını alan</strong> mexanizm</li>
-                <li><strong>Antikorroziya örtük</strong> və uzunömürlü konstruksiya</li>
-              </ul>
-            </div>
-          </article>
-        </a>
-
-        <!-- Product 4 -->
-        <a href="/categories/categories.html#gealan" class="product-card-link"
-          aria-label="GEALAN S 8000 PVC Profil Sistemi - Ətraflı">
-          <article class="card product-card">
-            <div class="card__media">
-              <img src="/assets/featured_products/s8000_secilmis.png" alt="GEALAN S8000 PVC Profil Sistemi"
-                loading="lazy" decoding="async" />
-            </div>
-
-            <div class="card__body">
-              <h3>GEALAN S8000 Profil</h3>
-
-              <ul class="product-features">
-                <li><strong>74 mm</strong> montaj dərinliyi</li>
-                <li><strong>5 və 6 kameralı</strong> izolyasiya sistemi</li>
-                <li><strong>52 mm-ə</strong> qədər ikiqat və üçqat şüşə uyğunluğu</li>
-                <li><strong>Gücləndirilmiş polad</strong> möhkəmləndirmə kamerası</li>
-                <li><strong>Yüksək istilik və səs </strong>izolyasiyası</li>
-                <li><strong>Pəncərə və giriş qapı</strong> sistemləri üçün uyğun</li>
-              </ul>
-            </div>
-          </article>
-        </a>
-
-        <!-- Product 5 -->
-        <a href="/categories/categories.html#kng" class="product-card-link"
-          aria-label="KNG Qaldır-Sür (HBSB) Sistemi - Ətraflı">
-          <article class="card product-card">
-            <div class="card__media">
-              <img src="/assets/featured_products/ls_system_secilmis.jpeg" alt="KNG Qaldır-Sür (HBSB) Sistemi"
-                loading="lazy" decoding="async" />
-            </div>
-
-            <div class="card__body">
-              <h3>KNG Qaldır-Sür (HBSB) Sistemi</h3>
-
-              <ul class="product-features">
-                <li><strong>300–400 kq</strong> ağır yük daşıma</li>
-                <li><strong>3300 mm</strong>-ə qədər geniş açılış</li>
-                <li><strong>Panoramik şüşə </strong>həlləri üçün ideal</li>
-                <li><strong>Daxili mikrolift</strong> ilə rahat idarəetmə</li>
-                <li><strong>Pnevmatik amortizasiya</strong> – yumşaq hərəkət</li>
-                <li><strong>Premium layihələr</strong> üçün nəzərdə tutulub</li>
-              </ul>
-            </div>
-          </article>
-        </a>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- =============================== 
-    A few of completed Projects 
-   =============================== -->
-
-  <section class="section projects">
-    <div class="container">
-      <h2 class="section__title" style="text-align: center">
-        Tamamlanmış Layihələrdən
-      </h2>
-
-      <div class="grid grid--4 projects__grid">
-
-        <!-- Project 1 -->
-        <a href="/about/about.html#projects" class="project-card-link">
-          <article class="card project-card">
-            <div class="card__media">
-              <img src="/assets/projects/seabreezeResort.png" alt="GEALAN və SIEGENIA layihəsi - Nardaran"
-                aria-label="Seabreeze layihəsi haqqında ətraflı" loading="lazy" decoding="async" />
-            </div>
-            <div class="card__body">
-              <h3>Seabreeze - Nardaran</h3>
-              <p class="muted">
-                GEALAN S8000 profil sistemi və SIEGENIA aksessuarları ilə villalar üçün tətbiq edilmiş layihə.
-              </p>
-            </div>
-          </article>
-        </a>
-
-        <!-- Project 2 -->
-        <a href="/about/about.html#projects" class="project-card-link">
-          <article class="card project-card">
-            <div class="card__media">
-              <img src="/assets/projects/gold_star.png" alt="SIEGENIA və GEALAN tətbiqi - Bakı"
-                aria-label="Gold Star Residence layihəsi haqqında ətraflı" decoding="async" />
-            </div>
-            <div class="card__body">
-              <h3>Gold Star Residence — Bakı</h3>
-              <p class="muted">
-                GEALAN S8000 profil sistemi və SIEGENIA aksessuarları tətbiq olunmuş rezidensiya layihəsi.
-              </p>
-            </div>
-          </article>
-        </a>
-
-        <!-- Project 3 -->
-        <a href="/about/about.html#projects" class="project-card-link">
-          <article class="card project-card">
-            <div class="card__media">
-              <img src="/assets/projects/luxe_home.jpg" alt="AXOR və GEALAN layihəsi - Bakı"
-                aria-label="Luxe Home layihəsi haqqında ətraflı" decoding="async" />
-            </div>
-            <div class="card__body">
-              <h3>Luxe Home Premium Yaşayış Kompleksi - Bakı</h3>
-              <p class="muted">
-                GEALAN S8000 profil sistemi və AXOR aksessuarları tətbiq olunmuş rezidensiya layihəsi.
-              </p>
-            </div>
-          </article>
-        </a>
-
-        <!-- Project 4 -->
-        <a href="/about/about.html#projects" class="project-card-link">
-          <article class="card project-card">
-            <div class="card__media">
-              <img src="/assets/projects/sirvansahlar_residences.jpg" alt="GEALAN S8000 və SIEGENIA layihəsi - Bakı"
-                aria-label="Şirvanşahlar Residence layihəsi haqqında ətraflı" loading="lazy" decoding="async" />
-            </div>
-            <div class="card__body">
-              <h3>Şirvanşahlar Residence - Bakı</h3>
-              <p class="muted">
-                GEALAN S8000 profil sistemi və SIEGENIA aksessuarları tətbiq olunmuş Şirvanşahlar layihəsi.
-              </p>
-            </div>
-          </article>
-        </a>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ===============================
-     OUR STRENGTHS
-     =============================== -->
-
-  <section class="section strengths">
-    <div class="container product-grid">
-      <h2 class="section__title" style="text-align: center">
-        Üstünlüklərimiz
-      </h2>
-
-      <div class="grid grid--4 strengths__grid">
-        <!-- Strength 1 -->
-        <div class="strength-card">
-          <i class="fa-solid fa-user-check strength-icon" aria-hidden="true"></i>
-          <h3>Peşəkar Yanaşma</h3>
-          <p>
-            <strong>Layihəniz üçün düzgün profil və uyğun aksesuar seçimini
-              peşəkar şəkildə müəyyənləşdiririk.</strong>
-          <p>Texniki tələblərə əsasən tam konsultasiya təqdim edirik.</p>
-          </p>
-        </div>
-
-        <!-- Strength 2 -->
-        <div class="strength-card">
-          <i class="fa-solid fa-shield-halved strength-icon" aria-hidden="true"></i>
-          <h3>Yüksək Keyfiyyət</h3>
-          <p>
-            <strong>Bütün məhsullar Avropa standartlarına uyğundur və 10 il
-              rəsmi zəmanətlə təklif olunur.</strong>
-          <p>Yalnız sertifikatlı və etibarlı brendlərlə əməkdaşlıq
-            edirik. </p>
-          </p>
-        </div>
-
-        <!-- Strength 3 -->
-        <div class="strength-card">
-          <i class="fa-solid fa-warehouse strength-icon" aria-hidden="true"></i>
-          <h3>Yerli Anbar</h3>
-          <p>
-            <strong>Daimi stok mövcuddur, sifarişlər qısa müddətdə təhvil
-              verilir.</strong>
-          <p>Həm iri, həm də gündəlik tələbat üçün fasiləsiz təminat.</p>
-          </p>
-        </div>
-
-        <!-- Strength 4 -->
-        <div class="strength-card">
-          <i class="fa-solid fa-box-open strength-icon" aria-hidden="true"></i>
-          <h3>Tam Komplektasiya</h3>
-          <p>
-            <strong>Çox növ Qapı və pəncərə sistemləri və profilləri
-              mövcuddur.</strong>
-          <p>Layihəniz üçün uyğun komplektasiyanı tam hazır şəkildə
-            təqdim edirik. </p>
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= 
-    Footer 
-   ================= -->
-  <footer class="site-footer">
-    <div class="site-footer__inner">
-
-      <!-- Brand -->
-      <div class="site-footer__brand">
-        <a href="/">
-          <img src="/assets/logo_name.png" alt="GEFELL MMC — pəncərə və qapı aksesuarları" />
-        </a>
-        <p class="site-footer__desc">
-          GEFELL MMC — pəncərə və qapı sistemləri üçün yüksək keyfiyyətli aksesuar və profillərin təchizatı üzrə
-          ixtisaslaşmış şirkətdir. Sertifikatlı, Avropa standartlarına uyğun həllər təqdim edirik.
-
-        </p>
-      </div>
-
-      <!-- Haqqımızda -->
-      <div>
-        <h4 class="site-footer__title">Haqqımızda</h4>
-        <ul class="site-footer__links">
-          <li><a href="/about/about.html#intro">Şirkət Təqdimatı</a></li>
-          <li><a href="/about/about.html#projects">Layihələr</a></li>
-          <li><a href="/about/about.html#faq">FAQ</a></li>
-          <li><a href="/news/news.html">Xəbərlər</a></li>
-        </ul>
-      </div>
-
-      <!-- Kateqoriyalar -->
-      <div>
-        <h4 class="site-footer__title">Kateqoriyalar</h4>
-        <ul class="site-footer__links">
-          <li><a href="/categories/categories.html#profiles">Profillər</a></li>
-          <li><a href="/categories/categories.html#accessories">Aksesuarlar</a></li>
-        </ul>
-      </div>
-
-
-      <!-- Yükləmələr -->
-      <div>
-        <h4 class="site-footer__title">Yükləmələr</h4>
-        <ul class="site-footer__links">
-          <li><a href="/downloads/downloads.html">Yükləmələr</a></li>
-        </ul>
-      </div>
-
-      <!-- Əlaqə -->
-      <div>
-        <h4 class="site-footer__title">Əlaqə</h4>
-
-        <ul class="site-footer__links">
-          <li><a href="/contact/contact.html">Əlaqə</a></li>
-        </ul>
-      </div>
-
-      <!-- Əlaqə vasitələri -->
-      <div class="site-footer__contact-col">
-
-        <ul class="site-footer__contact site-footer__contact--grid">
-          <!-- Telephone -->
-          <li>
-            <a href="tel:+994502266683" aria-label="Bizə zəng et: +994 50 226 66 83">
-              <i class="fa-solid fa-phone" aria-hidden="true"></i>
-              <span>+994 50 226 66 83</span>
-            </a>
-          </li>
-
-          <!-- WhatsApp -->
-          <li>
-            <a href="https://wa.me/994502266683" target="_blank" rel="noopener noreferrer nofollow"
-              aria-label="Bizə WhatsAppdan yaz: +994 50 226 66 83">
-              <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-              <span>WhatsApp</span>
-            </a>
-          </li>
-
-          <!-- Email -->
-          <li>
-            <a href="mailto:info@gefell.az" aria-label="Bizə mail at: info@gefell.az">
-              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-              <span>info@gefell.az</span>
-            </a>
-          </li>
-
-          <!-- Instagram -->
-          <li><a href="https://www.instagram.com/gefell.az/" target="_blank" rel="noopener noreferrer nofollow"
-              aria-label="Instagram səhifəmizə keçid">
-              <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-              <span>Instagram</span>
-            </a>
-          </li>
-          <!-- TikTok -->
-          <li>
-            <a href="https://www.tiktok.com/@gefell.az" target="_blank" rel="noopener noreferrer nofollow"
-              aria-label="TikTok səhifəmizə keçid">
-              <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
-              <span>TikTok</span>
-            </a>
-          </li>
-          <!-- YouTube -->
-          <li>
-            <a href="https://www.youtube.com/@GEFELL_MMC" target="_blank" rel="noopener noreferrer nofollow"
-              aria-label="YouTube kanalımıza keçid">
-              <i class="fa-brands fa-youtube" aria-hidden="true"></i>
-              <span>YouTube</span>
-            </a>
-          </li>
-
-        </ul>
-      </div>
-
+    </footer>
+
+    <div class="dock">
+        <a class="wa" href="https://wa.me/994502266683" target="_blank" rel="noopener" aria-label="WhatsApp"><i
+                class="fa-brands fa-whatsapp"></i></a>
+        <a class="ig" href="https://www.instagram.com/gefell.az/" target="_blank" rel="noopener"
+            aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a class="tt" href="https://www.tiktok.com/@gefell.az" target="_blank" rel="noopener" aria-label="TikTok"><i
+                class="fa-brands fa-tiktok"></i></a>
     </div>
 
-
-
-    <!-- Bottom bar: auto year with JS -->
-    <div class="site-footer__bottom">
-      &copy;<span id="currentYear"></span> GEFELL MMC. Bütün hüquqlar qorunur.
-    </div>
-  </footer>
-
-  <!-- ============================= 
-    Script Include & Image decoding
-   ================================== -->
-
-  <!-- Load the shared JS with 'defer' so it executes after parsing HTML (faster first paint). -->
-  <script src="/script.js" defer></script>
-
-  <!-- Decoding the images beforehand to avoid the lags -->
-  <script>
-    window.addEventListener("DOMContentLoaded", () => {
-      const imgs = document.querySelectorAll(".featured__slide img");
-      if (!imgs.length) return;
-
-      // Function to "warm up" image decoding
-      const warmUpImages = () => {
-        imgs.forEach((img) => {
-          if (img.decode) {
-            img.decode().catch(() => { }); // silently pre-decode
-          }
-        });
-      };
-
-      // Run when the browser is idle (doesn't block the main thread)
-      if ("requestIdleCallback" in window) {
-        requestIdleCallback(warmUpImages, { timeout: 2000 });
-      } else {
-        setTimeout(warmUpImages, 1000);
-      }
-    });
-  </script>
+    <script src="/script-v4.js" defer></script>
 </body>
 
 </html>
