@@ -2071,6 +2071,12 @@ h4 {
 .cert-card.ph-missing {
   cursor: default;
 }
+.prow__media.ph-missing img {
+  display: none;
+}
+.prow__media.ph-missing .sysph {
+  display: flex;
+}
 
 /* ---- Certificate lightbox ---- */
 .lightbox {
